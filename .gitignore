@@ -1,4 +1,5 @@
 .*
+!.babelrc
 !.gitignore
 node_modules
 public
