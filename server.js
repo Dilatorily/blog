@@ -1,10 +1,9 @@
-'use strict';
-
 const webpack = require('webpack');
-const webpackDevServer = require('webpack-dev-server');
+const WebpackDevServer = require('webpack-dev-server');
 
+const { DEFAULT_PORT } = require('./configuration');
 const configuration = require('./webpack.config');
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || DEFAULT_PORT;
 
-const app = new webpackDevServer(webpack(configuration));
+const app = new WebpackDevServer(webpack(configuration));
 app.listen(port);
