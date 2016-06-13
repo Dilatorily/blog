@@ -5,7 +5,8 @@ module.exports = {
         ecmaVersion: 6,
         sourceType: 'module',
         ecmaFeatures: {
-            impliedStrict: true
+            impliedStrict: true,
+            jsx: true
         }
     },
     env: {
@@ -14,5 +15,6 @@ module.exports = {
         commonjs: true,
         es6: true
     },
+    plugins: ['react'],
     rules
 };

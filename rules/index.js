@@ -5,6 +5,8 @@ const variables = require('./variables');
 const node = require('./node');
 const style = require('./style');
 const es6 = require('./es6');
+const react = require('./react');
+const jsx = require('./jsx');
 
 const rules = [
     errors,
@@ -13,7 +15,9 @@ const rules = [
     variables,
     node,
     style,
-    es6
+    es6,
+    react,
+    jsx
 ];
 
 module.exports = Object.assign(...rules);

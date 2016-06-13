@@ -1,16 +1,16 @@
 const eslint = {
-    test: /\.js$/,
+    test: /\.jsx?$/,
     loader: 'eslint',
     exclude: /node_modules/
 };
 
-const js = {
-    test: /\.js$/,
+const jsx = {
+    test: /\.jsx?$/,
     loader: 'babel',
     exclude: /node_modules/
 };
 
 module.exports = {
     preLoaders: [eslint],
-    loaders: [js]
+    loaders: [jsx]
 };

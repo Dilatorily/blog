@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const loaders = require('./webpack.loaders');
 
 module.exports = {
-    entry: { application: ['./src/index.js'] },
+    entry: { application: ['./src/index.jsx'] },
     output: {
         path: path.join(__dirname, 'public'),
         filename: '[name].[hash].js'
