@@ -10,7 +10,12 @@ const jsx = {
     exclude: /node_modules/
 };
 
+const css = {
+    test: /\.css$/,
+    loaders: ['style', 'css']
+};
+
 module.exports = {
     preLoaders: [preJsx],
-    loaders: [jsx]
+    loaders: [jsx, css]
 };
