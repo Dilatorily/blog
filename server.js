@@ -1,9 +1,10 @@
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 
-const { DEFAULT_PORT } = require('./configuration');
+const { isDevelopment, port } = require('./configuration');
 const configuration = require('./webpack.config');
-const port = process.env.PORT || DEFAULT_PORT;
 
-const app = new WebpackDevServer(webpack(configuration));
-app.listen(port);
+if (isDevelopment) {
+    const app = new WebpackDevServer(webpack(configuration));
+    app.listen(port);
+}

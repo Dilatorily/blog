@@ -6,6 +6,7 @@
     "clean": "rimraf public",
     "prebuild": "npm run clean",
     "build": "webpack",
+    "dev": "NODE_ENV=development PORT=8080 node server",
     "start": "http-server"
   },
   "dependencies": {
