@@ -2,5 +2,7 @@
 !.babelrc
 !.eslintrc.js
 !.gitignore
+*.log
+*.pem
 node_modules
 public

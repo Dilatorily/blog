@@ -5,13 +5,16 @@
   "scripts": {
     "clean": "rimraf public",
     "prebuild": "npm run clean",
-    "build": "webpack",
-    "dev": "NODE_ENV=development PORT=8080 node server",
-    "start": "http-server"
+    "build": "NODE_ENV=production webpack",
+    "dev": "PORT=8080 NODE_ENV=development node server",
+    "start": "NODE_ENV=production forever start server.js",
+    "stop": "NODE_ENV=production forever stop `forever list | grep server.js | awk {'print $7'}`",
+    "restart": "NODE_ENV=production forever restart `forever list | grep server.js | awk {'print $7'}`"
   },
   "dependencies": {
     "react": "^15.1.0",
-    "react-dom": "^15.1.0"
+    "react-dom": "^15.1.0",
+    "react-hot-loader": "^3.0.0-beta.2"
   },
   "devDependencies": {
     "babel-loader": "^6.2.4",
@@ -22,11 +25,15 @@
     "eslint": "^2.12.0",
     "eslint-loader": "^1.3.0",
     "eslint-plugin-react": "^5.1.1",
+    "express": "^4.13.4",
+    "forever": "^0.15.2",
+    "helmet": "^2.1.1",
     "html-webpack-plugin": "^2.21.0",
-    "http-server": "^0.9.0",
     "rimraf": "^2.5.2",
+    "source-map-loader": "^0.1.5",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1",
-    "webpack-split-by-path": "^0.0.10"
+    "webpack-split-by-path": "^0.0.10",
+    "winston": "^2.2.0"
   }
 }

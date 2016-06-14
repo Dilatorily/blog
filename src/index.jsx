@@ -1,6 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
 
-const App = () => <h1>Hello, World!</h1>;
+import App from './App';
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+const root = document.querySelector('#root');
+
+ReactDOM.render(
+    <AppContainer>
+        <App />
+    </AppContainer>,
+    root
+);
+
+if (process.env.NODE_ENV !== 'production' && module.hot) {
+    module.hot.accept('./App', () => {
+        const NextApp = require('./App').default;
+        ReactDOM.render(
+            <AppContainer>
+                <NextApp />
+            </AppContainer>,
+            root
+        );
+    });
+}
