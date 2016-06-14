@@ -1,8 +1,7 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const loaders = require('./webpack.loaders');
+const plugins = require('./webpack/plugins');
+const loaders = require('./webpack/loaders');
 
 module.exports = {
     entry: { application: ['./src/index.jsx'] },
@@ -10,12 +9,6 @@ module.exports = {
         path: path.join(__dirname, 'public'),
         filename: '[name].[hash].js'
     },
-    plugins: [
-        new HtmlWebpackPlugin({ template: './src/index.html', inject: 'body' }),
-        new CopyWebpackPlugin([{
-            from: './src/assets/favicon.ico',
-            to: 'assets'
-        }])
-    ],
+    plugins,
     module: loaders
 };
