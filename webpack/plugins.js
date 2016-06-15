@@ -8,9 +8,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackSplitByPath = require('webpack-split-by-path');
 
 const basePlugins = [
-    new webpack.DefinePlugin(
-        { 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV) }
-    ),
+    new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        __DEV__: isDevelopment
+    }),
     new WebpackSplitByPath([{
         name: 'vendor',
         path: [path.join(__dirname, '../node_modules')]
