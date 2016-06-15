@@ -2,7 +2,8 @@ const winston = require('winston');
 
 const {
     isDevelopment,
-    maxAge,
+    httpsMaxAge,
+    cacheMaxAge,
     port,
     httpsPort,
     pems
@@ -26,6 +27,7 @@ if (isDevelopment) {
     app.listen(port, listen(port));
 } else {
     const express = require('express');
+    const compression = require('compression');
     const helmet = require('helmet');
     const https = require('https');
 
@@ -38,11 +40,14 @@ if (isDevelopment) {
     });
     app.listen(port, listen(port));
 
+    secureApp.use(compression({ threshold: 0 }));
     secureApp.use(helmet.hsts({
-        maxAge,
+        maxAge: httpsMaxAge,
         includeSubdomains: true,
         force: true
     }));
-    secureApp.use(express.static(configuration.output.path));
+    secureApp.use(express.static(configuration.output.path,
+        { maxAge: cacheMaxAge }
+    ));
     httpsApp.listen(httpsPort, listen(httpsPort));
 }
