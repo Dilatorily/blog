@@ -5,6 +5,7 @@ module.exports = {
     'react/jsx-closing-bracket-location': [constants.ERROR, 'line-aligned'],
     'react/jsx-curly-spacing': [constants.ERROR, 'always'],
     'react/jsx-equals-spacing': [constants.ERROR, 'never'],
+    'react/jsx-filename-extension': constants.ERROR,
     'react/jsx-first-prop-new-line': [constants.ERROR, 'multiline'],
     'react/jsx-handler-names': [constants.ERROR, {
         eventHandlerPrefix: 'handle',
