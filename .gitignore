@@ -4,5 +4,6 @@
 !.gitignore
 *.log
 *.pem
+coverage
 node_modules
 public

@@ -9,6 +9,7 @@ const DEFAULT_CERT_PEM = 'cert.pem';
 
 module.exports = {
     isDevelopment: process.env.NODE_ENV === 'development',
+    isTest: process.env.NODE_ENV === 'test',
     httpsMaxAge: ONE_YEAR,
     cacheMaxAge: ONE_MONTH,
     port: process.env.PORT || DEFAULT_PORT,

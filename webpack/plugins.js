@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const { isDevelopment } = require('../configuration');
+const { isDevelopment, isTest } = require('../configuration');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -30,7 +30,7 @@ const productionPlugins = [
     new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
 ];
 
-module.exports = basePlugins.concat(isDevelopment ?
+module.exports = isTest ? undefined : basePlugins.concat(isDevelopment ?
     developmentPlugins :
     productionPlugins
 );

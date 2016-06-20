@@ -1,7 +1,7 @@
 const constants = require('./constants');
 
 module.exports = {
-    'init-declarations': [constants.ERROR, 'always'],
+    'init-declarations': constants.OFF,
     'no-catch-shadow': constants.ERROR,
     'no-delete-var': constants.ERROR,
     'no-label-var': constants.ERROR,
