@@ -1,30 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { StyleRoot } from 'radium';
+import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 import 'normalize.css';
 
 import App from './components/App';
+import { configureStore } from './store';
+import { isDevelopment } from './utils';
 
 const root = document.querySelector('#root');
+const store = configureStore();
 
 ReactDOM.render(
     <StyleRoot>
-        <AppContainer>
-            <App />
-        </AppContainer>
+        <Provider store={ store }>
+            <AppContainer>
+                <App />
+            </AppContainer>
+        </Provider>
     </StyleRoot>,
     root
 );
 
-if (process.env.NODE_ENV === 'development' && module.hot) {
+if (isDevelopment && module.hot) {
     module.hot.accept('./components/App', () => {
         const NextApp = require('./components/App').default;
         ReactDOM.render(
             <StyleRoot>
-                <AppContainer>
-                    <NextApp />
-                </AppContainer>
+                <Provider store={ store }>
+                    <AppContainer>
+                        <NextApp />
+                    </AppContainer>
+                </Provider>
             </StyleRoot>,
             root
         );
