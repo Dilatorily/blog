@@ -14,7 +14,7 @@ module.exports = {
     'no-empty-character-class': constants.ERROR,
     'no-ex-assign': constants.ERROR,
     'no-extra-boolean-cast': constants.ERROR,
-    'no-extra-parens': [constants.ERROR, 'all'],
+    'no-extra-parens': [constants.OFF, 'all'],
     'no-extra-semi': constants.ERROR,
     'no-func-assign': constants.ERROR,
     'no-inner-declarations': [constants.ERROR, 'both'],

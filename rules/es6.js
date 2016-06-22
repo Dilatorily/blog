@@ -7,7 +7,7 @@ module.exports = {
     'constructor-super': constants.ERROR,
     'generator-star-spacing': [constants.ERROR, { before: false, after: true }],
     'no-class-assign': constants.ERROR,
-    'no-confusing-arrow': [constants.OFF, { allowParens: true }],
+    'no-confusing-arrow': [constants.ERROR, { allowParens: true }],
     'no-const-assign': constants.ERROR,
     'no-dupe-class-members': constants.ERROR,
     'no-duplicate-imports': constants.ERROR,

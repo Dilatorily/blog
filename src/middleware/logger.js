@@ -3,9 +3,11 @@ import { Iterable } from 'immutable';
 
 const logger = reduxLogger({
     collapsed: true,
-    stateTransformer: (state) => Iterable.isIterable(state) ?
+    stateTransformer: (state) => (
+        Iterable.isIterable(state) ?
         state.toJS() :
         state
+    )
 });
 
 export default logger;
