@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 import 'normalize.css';
 
-import App from './components/App';
+import Root from './components/Root';
 import { configureStore } from './store';
 import { isDevelopment } from './utils';
 
@@ -16,7 +16,7 @@ ReactDOM.render(
     <StyleRoot>
         <Provider store={ store }>
             <AppContainer>
-                <App />
+                <Root store={ store } />
             </AppContainer>
         </Provider>
     </StyleRoot>,
@@ -24,13 +24,13 @@ ReactDOM.render(
 );
 
 if (isDevelopment && module.hot) {
-    module.hot.accept('./components/App', () => {
-        const NextApp = require('./components/App').default;
+    module.hot.accept('./components/Root', () => {
+        const NextRoot = require('./components/Root').default;
         ReactDOM.render(
             <StyleRoot>
                 <Provider store={ store }>
                     <AppContainer>
-                        <NextApp />
+                        <NextRoot store={ store } />
                     </AppContainer>
                 </Provider>
             </StyleRoot>,

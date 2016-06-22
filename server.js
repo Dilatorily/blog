@@ -1,3 +1,4 @@
+const path = require('path');
 const winston = require('winston');
 
 const {
@@ -23,7 +24,10 @@ if (isDevelopment) {
     const webpack = require('webpack');
     const WebpackDevServer = require('webpack-dev-server');
 
-    const app = new WebpackDevServer(webpack(configuration), { hot: true });
+    const app = new WebpackDevServer(webpack(configuration), {
+        hot: true,
+        historyApiFallback: true
+    });
     app.listen(port, listen(port));
 } else {
     const express = require('express');
@@ -49,5 +53,8 @@ if (isDevelopment) {
     secureApp.use(express.static(configuration.output.path,
         { maxAge: cacheMaxAge }
     ));
+    secureApp.get('*', (req, res) => {
+        res.sendFile(path.join(configuration.output.path, 'index.html'));
+    });
     httpsApp.listen(httpsPort, listen(httpsPort));
 }

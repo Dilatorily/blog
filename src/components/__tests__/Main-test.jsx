@@ -2,12 +2,12 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import App from '../App';
+import Main from '../Main';
 
-describe('<App />', () => {
+describe('<Main />', () => {
     let node;
     beforeEach(() => {
-        node = shallow(<App />);
+        node = shallow(<Main />);
     });
 
     it('renders properly', () => {
