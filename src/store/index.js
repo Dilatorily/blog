@@ -1,5 +1,6 @@
-import { createStore } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
 
+import middleware from '../middleware';
 import reducers from '../reducers';
 import { isDevelopment } from '../utils';
 
@@ -7,9 +8,12 @@ export const configureStore = (initialState) => {
     const store = createStore(
         reducers,
         initialState,
-        isDevelopment && window.devToolsExtension ?
-            window.devToolsExtension() :
-            (fn) => fn
+        compose(
+            applyMiddleware(...middleware),
+            isDevelopment && window.devToolsExtension ?
+                window.devToolsExtension() :
+                (func) => func
+        )
     );
 
     if (isDevelopment && module.hot) {
