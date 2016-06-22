@@ -11,6 +11,7 @@ describe('<App />', () => {
     });
 
     it('renders properly', () => {
-        expect(node).to.have.text('Hello, World with hot reload!');
+        expect(node).to.have
+            .text('Hello, World from React with hot reload and Radium!');
     });
 });
