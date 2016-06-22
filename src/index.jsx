@@ -4,7 +4,7 @@ import { StyleRoot } from 'radium';
 import { AppContainer } from 'react-hot-loader';
 import 'normalize.css';
 
-import App from './App';
+import App from './components/App';
 
 const root = document.querySelector('#root');
 
@@ -18,8 +18,8 @@ ReactDOM.render(
 );
 
 if (process.env.NODE_ENV === 'development' && module.hot) {
-    module.hot.accept('./App', () => {
-        const NextApp = require('./App').default;
+    module.hot.accept('./components/App', () => {
+        const NextApp = require('./components/App').default;
         ReactDOM.render(
             <StyleRoot>
                 <AppContainer>
