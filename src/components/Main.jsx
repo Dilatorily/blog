@@ -1,5 +1,6 @@
 import React from 'react';
 import Radium from 'radium';
+import { Link } from 'react-router';
 
 const styles = {
     heading: {
@@ -10,9 +11,12 @@ const styles = {
 };
 
 const Main = () =>
-    <h1 style={ styles.heading }>
-        Hello, World from React with hot reload and Radium!
-    </h1>
+    <div>
+        <h1 style={ styles.heading }>
+            Hello, World from React with hot reload and Radium!
+        </h1>
+        <Link to="/test">To link</Link>
+    </div>
 ;
 
 export default Radium(Main);

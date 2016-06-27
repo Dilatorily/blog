@@ -1,5 +1,6 @@
 import React from 'react';
 import Radium from 'radium';
+import { Link } from 'react-router';
 
 const styles = {
     heading: {
@@ -10,9 +11,12 @@ const styles = {
 };
 
 const Test = () =>
-    <h1 style={ styles.heading }>
-        Test routing!
-    </h1>
+    <div>
+        <h1 style={ styles.heading }>
+            Test routing!
+        </h1>
+        <Link to="/">To main</Link>
+    </div>
 ;
 
 export default Radium(Test);
