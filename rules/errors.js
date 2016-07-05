@@ -1,7 +1,6 @@
 const constants = require('./constants');
 
 module.exports = {
-    'comma-dangle': [constants.ERROR, 'never'],
     'no-cond-assign': [constants.ERROR, 'always'],
     'no-console': constants.WARNING,
     'no-constant-condition': constants.ERROR,

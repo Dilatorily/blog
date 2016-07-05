@@ -5,6 +5,7 @@ module.exports = {
     'block-spacing': [constants.ERROR, 'always'],
     'brace-style': [constants.ERROR, '1tbs'],
     camelcase: [constants.ERROR, { properties: 'never' }],
+    'comma-dangle': [constants.ERROR, 'never'],
     'comma-spacing': [constants.ERROR, { before: false, after: true }],
     'comma-style': [constants.ERROR, 'last'],
     'computed-property-spacing': [constants.ERROR, 'never'],
