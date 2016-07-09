@@ -26,7 +26,6 @@ const basePlugins = [
 const developmentPlugins = [new webpack.HotModuleReplacementPlugin()];
 const productionPlugins = [
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(true),
     new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
 ];
 
