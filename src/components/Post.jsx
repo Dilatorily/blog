@@ -33,8 +33,8 @@ const styles = {
         color: RED
     },
     post: {
-        'p, ul, ol, table': { fontWeight: 100 },
-        'h1, h2, h3, h4, h5, h6, strong, th': { fontWeight: 500 },
+        'p, ul, ol, table': { fontWeight: 200 },
+        'h1, h2, h3, h4, h5, h6, strong, th': { fontWeight: 600 },
         p: { fontSize: 18 },
         code: {
             fontFamily: 'Roboto Mono',
@@ -42,7 +42,7 @@ const styles = {
         },
         img: { maxWidth: '100%' },
         a: {
-            fontWeight: 'normal',
+            fontWeight: 500,
             color: RED,
             textDecoration: 'none',
             transition: '0.25s ease-in-out'

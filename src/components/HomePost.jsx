@@ -24,14 +24,14 @@ const styles = {
     title: {
         margin: '0 0 10px',
         fontSize: 32,
-        fontWeight: 500,
+        fontWeight: 600,
         transition: '0.25s ease-in-out'
     },
     hovered: { color: LIGHT_BLUE },
     description: {
         margin: 0,
         fontSize: 18,
-        fontWeight: 100,
+        fontWeight: 200,
         whiteSpace: 'nowrap',
         overflow: 'hidden',
         textOverflow: 'ellipsis'
@@ -42,7 +42,7 @@ const styles = {
         width: 200,
         margin: 0,
         fontSize: 16,
-        fontWeight: 'normal',
+        fontWeight: 500,
         fontStyle: 'italic',
         textAlign: 'right',
         color: RED,
