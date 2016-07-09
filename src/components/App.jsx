@@ -15,7 +15,7 @@ const styles = {
         backgroundColor: RED,
         height: 140,
         marginBottom: 50,
-        '@media only screen and (max-width: 320px)': {
+        '@media only screen and (max-width: 360px)': {
             height: 214,
             marginBottom: 30
         }
@@ -32,13 +32,13 @@ const styles = {
         borderRadius: '50%',
         transition: '0.25s ease-in-out',
         ':hover': { borderRadius: 25 },
-        '@media only screen and (max-width: 320px)': { marginBottom: 10 }
+        '@media only screen and (max-width: 360px)': { marginBottom: 10 }
     },
     headerTextContainer: {
         display: 'inline-block',
         verticalAlign: 'middle',
         textAlign: 'left',
-        '@media only screen and (max-width: 320px)': {
+        '@media only screen and (max-width: 360px)': {
             display: 'block',
             textAlign: 'center'
         }
