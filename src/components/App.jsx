@@ -14,7 +14,11 @@ const styles = {
     header: {
         backgroundColor: RED,
         height: 140,
-        marginBottom: 50
+        marginBottom: 50,
+        '@media only screen and (max-width: 320px)': {
+            height: 214,
+            marginBottom: 30
+        }
     },
     avatarContainer: {
         textAlign: 'center',
@@ -27,12 +31,17 @@ const styles = {
         width: 100,
         borderRadius: '50%',
         transition: '0.25s ease-in-out',
-        ':hover': { borderRadius: 25 }
+        ':hover': { borderRadius: 25 },
+        '@media only screen and (max-width: 320px)': { marginBottom: 10 }
     },
     headerTextContainer: {
         display: 'inline-block',
         verticalAlign: 'middle',
-        textAlign: 'left'
+        textAlign: 'left',
+        '@media only screen and (max-width: 320px)': {
+            display: 'block',
+            textAlign: 'center'
+        }
     },
     name: {
         fontSize: 20,
