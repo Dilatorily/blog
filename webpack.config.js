@@ -8,7 +8,7 @@ const loaders = require('./webpack/loaders');
 module.exports = {
     entry,
     output,
-    devtool: isDevelopment ? 'eval' : 'source-map',
+    devtool: isDevelopment ? 'eval' : '#source-map',
     resolve: { extensions: ['', '.js', '.jsx', 'json'] },
     plugins,
     module: loaders,

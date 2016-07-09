@@ -7,6 +7,7 @@ import RouterFix from '../routes/RouterFix';
 
 const Root = (props) => {
     const history = Object.assign(
+        {},
         RouterFix,
         syncHistoryWithStore(browserHistory, props.store)
     );
@@ -14,7 +15,7 @@ const Root = (props) => {
     return (
         <Router
             history={ history }
-            routes={ Object.assign(RouterFix, routes) }
+            routes={ Object.assign({}, RouterFix, routes) }
         />
     );
 };

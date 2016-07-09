@@ -1,6 +1,6 @@
 const { isDevelopment, port } = require('../configuration');
 
-const baseApplication = ['./src/index.jsx'];
+const baseApplication = ['babel-polyfill', './src/index.jsx'];
 const developmentApplication = [
     'react-hot-loader/patch',
     `webpack-dev-server/client?http://localhost:${ port }`,

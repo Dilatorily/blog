@@ -4,10 +4,9 @@ import middleware from '../middleware';
 import reducers from '../reducers';
 import { isDevelopment } from '../utils';
 
-export const configureStore = (initialState) => {
+export const configureStore = () => {
     const store = createStore(
         reducers,
-        initialState,
         compose(
             applyMiddleware(...middleware),
             isDevelopment && window.devToolsExtension ?

@@ -1,20 +1,25 @@
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
+import { Route, IndexRoute, IndexRedirect } from 'react-router';
 
 import App from '../components/App';
-import Main from '../components/Main';
-import Test from '../components/Test';
+import Home from '../components/Home';
+import Post from '../components/Post';
 
 const routes = (
-    <Route
-        path="/"
-        component={ App }
-    >
-        <IndexRoute component={ Main } />
+    <Route>
         <Route
-            path="test"
-            component={ Test }
-        />
+            path="/"
+            component={ App }
+        >
+            <IndexRoute component={ Home } />
+            <Route
+                path="posts/:date"
+                component={ Post }
+            />
+        </Route>
+        <Route path="*">
+            <IndexRedirect to="/" />
+        </Route>
     </Route>
 );
 

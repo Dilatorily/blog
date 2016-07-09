@@ -1,18 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { StyleRoot } from 'radium';
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 import 'normalize.css';
+import 'font-awesome/css/font-awesome.css';
+import 'raleway-webfont/raleway.css';
+import 'roboto-mono-webfont/roboto-mono.css';
 
 import Root from './components/Root';
 import { configureStore } from './store';
 import { isDevelopment } from './utils';
 
-const root = document.querySelector('#root');
+const root = document.getElementById('root');
 const store = configureStore();
 
-ReactDOM.render(
+render(
     <StyleRoot>
         <Provider store={ store }>
             <AppContainer>
@@ -26,7 +29,7 @@ ReactDOM.render(
 if (isDevelopment && module.hot) {
     module.hot.accept('./components/Root', () => {
         const NextRoot = require('./components/Root').default;
-        ReactDOM.render(
+        render(
             <StyleRoot>
                 <Provider store={ store }>
                     <AppContainer>

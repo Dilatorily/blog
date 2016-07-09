@@ -11,7 +11,7 @@ module.exports = {
         eventHandlerPrefix: 'handle',
         eventHandlerPropPrefix: 'on'
     }],
-    'react/jsx-indent': [constants.ERROR, constants.INDENTATION],
+    'react/jsx-indent': constants.OFF,
     'react/jsx-indent-props': [constants.ERROR, constants.INDENTATION],
     'react/jsx-key': constants.ERROR,
     'react/jsx-max-props-per-line': [constants.ERROR, { maximum: 1 }],

@@ -28,7 +28,34 @@ const json = {
     loader: 'json'
 };
 
+const md = {
+    test: /\.md$/,
+    loader: 'raw'
+};
+
+const images = {
+    test: /\.jpe?g$/,
+    loaders: ['file?name=assets/[name].[ext]', 'image-webpack'],
+    include: /assets/
+};
+
+const fonts = [
+    {
+        test: /\.woff2?(\?.*)?$/,
+        loader: 'url?limit=10000&mimetype=application/font-woff'
+    }, {
+        test: /\.ttf(\?.*)?$/,
+        loader: 'url?limit=10000&mimetype=application/octet-stream'
+    }, {
+        test: /\.eot(\?.*)?$/,
+        loader: 'file'
+    }, {
+        test: /\.svg(\?.*)?$/,
+        loader: 'url?limit=10000&mimetype=image/svg+xml'
+    }
+];
+
 module.exports = {
     preLoaders: isTest ? [preTestJsx] : [preJsx],
-    loaders: [jsx, css, json]
+    loaders: [jsx, css, json, md, images, ...fonts]
 };
