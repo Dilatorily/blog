@@ -8,7 +8,7 @@ import FontAwesomeIcon from './FontAwesomeIcon';
 
 const styles = {
     container: {
-        fontFamily: 'Helvetica Neue, Raleway, sans-serif',
+        fontFamily: 'Raleway, sans-serif',
         color: DARK_GREY
     },
     header: {
