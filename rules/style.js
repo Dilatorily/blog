@@ -34,6 +34,7 @@ module.exports = {
     'max-params': constants.OFF,
     'max-statements': constants.OFF,
     'max-statements-per-line': [constants.ERROR, { max: 1 }],
+    'multiline-ternary': constants.OFF,
     'new-cap': [constants.ERROR, { newIsCap: true, capIsNew: false }],
     'new-parens': constants.ERROR,
     'newline-after-var': constants.OFF,

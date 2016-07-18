@@ -2,6 +2,7 @@ import Remarkable from 'remarkable';
 import highlight from 'highlight.js';
 
 export default new Remarkable({
+    html: true,
     highlight: (str, language) => {
         if (language && highlight.getLanguage(language)) {
             try {

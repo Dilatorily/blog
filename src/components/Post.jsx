@@ -3,6 +3,7 @@ import moment from 'moment';
 import { Style } from 'radium';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
+import '../assets/images';
 
 import {
     LIGHT_RED,
@@ -37,7 +38,7 @@ const styles = {
         'h1, h2, h3, h4, h5, h6, strong, th': { fontWeight: 600 },
         p: { fontSize: 18 },
         code: {
-            fontFamily: 'Roboto Mono',
+            fontFamily: 'Roboto Mono, monospace',
             fontWeight: 'normal'
         },
         img: { maxWidth: '100%' },
@@ -74,6 +75,13 @@ const styles = {
         },
         'table tbody tr:nth-child(even)': { backgroundColor: LIGHT_GREY },
         'table tbody td': { padding: '5px 10px' },
+        hr: {
+            borderTop: `3px dotted ${ RED }`,
+            borderBottom: 'none',
+            borderLeft: 'none',
+            borderRight: 'none',
+            margin: '30px 30%'
+        },
         '.hljs-comment, .hljs-quote': {
             color: NEUTRAL_GREY,
             fontStyle: 'italic'
