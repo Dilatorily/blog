@@ -36,24 +36,18 @@ if (isDevelopment) {
     const https = require('https');
 
     const app = express();
-    const secureApp = express();
-    const httpsApp = https.createServer(pems, secureApp);
+    const httpsApp = https.createServer(pems, app);
 
-    app.use((req, res) => {
-        res.redirect(`https://${ req.headers.host }${ req.path }`);
-    });
-    app.listen(port, listen(port));
-
-    secureApp.use(compression({ threshold: 0 }));
-    secureApp.use(helmet.hsts({
+    app.use(compression({ threshold: 0 }));
+    app.use(helmet.hsts({
         maxAge: httpsMaxAge,
         includeSubdomains: true,
         force: true
     }));
-    secureApp.use(express.static(configuration.output.path,
+    app.use(express.static(configuration.output.path,
         { maxAge: cacheMaxAge }
     ));
-    secureApp.get('*', (req, res) => {
+    app.get('*', (req, res) => {
         res.sendFile(path.join(configuration.output.path, 'index.html'));
     });
     httpsApp.listen(httpsPort, listen(httpsPort));
