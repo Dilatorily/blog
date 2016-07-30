@@ -4,5 +4,5 @@ export const getContentFromFirstTag = (post, tag) => {
     const tags = document.createElement('div');
     tags.innerHTML = post;
     return tags.getElementsByTagName(tag)[0] ?
-        tags.getElementsByTagName(tag)[0].innerHTML : null;
+        tags.getElementsByTagName(tag)[0].textContent : null;
 };

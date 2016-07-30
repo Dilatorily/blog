@@ -58,6 +58,7 @@ module.exports = {
     'no-plusplus': constants.OFF,
     'no-restricted-syntax': constants.OFF,
     'no-spaced-func': constants.ERROR,
+    'no-tabs': constants.ERROR,
     'no-ternary': constants.OFF,
     'no-trailing-spaces': constants.ERROR,
     'no-underscore-dangle': constants.ERROR,
