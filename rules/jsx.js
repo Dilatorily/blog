@@ -20,6 +20,7 @@ module.exports = {
         allowArrowFunctions: false,
         allowBind: false
     }],
+    'react/jsx-no-comment-textnodes': constants.ERROR,
     'react/jsx-no-duplicate-props': [constants.ERROR, { ignoreCase: false }],
     'react/jsx-no-literals': constants.OFF,
     'react/jsx-no-target-blank': constants.ERROR,
@@ -28,5 +29,6 @@ module.exports = {
     'react/jsx-sort-props': constants.OFF,
     'react/jsx-space-before-closing': [constants.ERROR, 'always'],
     'react/jsx-uses-react': constants.ERROR,
-    'react/jsx-uses-vars': constants.ERROR
+    'react/jsx-uses-vars': constants.ERROR,
+    'react/jsx-wrap-multilines': constants.ERROR
 };
