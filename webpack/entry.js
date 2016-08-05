@@ -10,4 +10,4 @@ const application = isDevelopment ?
     developmentApplication.concat(baseApplication) :
     baseApplication;
 
-module.exports = { application };
+module.exports = application;
