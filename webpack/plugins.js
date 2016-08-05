@@ -4,7 +4,6 @@ const { isDevelopment, isTest } = require('../configuration');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 
 const basePlugins = [
     new webpack.DefinePlugin({
@@ -15,11 +14,7 @@ const basePlugins = [
     new CopyWebpackPlugin([{
         from: './src/assets/favicon.ico',
         to: 'assets'
-    }, {
-        from: './src/assets/images',
-        to: 'assets'
     }]),
-    new ImageminWebpackPlugin(),
     new webpack.NoErrorsPlugin()
 ];
 const developmentPlugins = [new webpack.HotModuleReplacementPlugin()];
