@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 const DEFAULT_PORT = 80;
 const DEFAULT_HTTPS_PORT = 443;
 const ONE_MONTH = 2592000000;
@@ -15,7 +13,7 @@ module.exports = {
     port: process.env.PORT || DEFAULT_PORT,
     httpsPort: process.env.HTTPS_PORT || DEFAULT_HTTPS_PORT,
     pems: {
-        key: fs.readFileSync(process.env.KEY_PEM || DEFAULT_KEY_PEM),
-        cert: fs.readFileSync(process.env.CERT_PEM || DEFAULT_CERT_PEM)
+        key: process.env.KEY_PEM || DEFAULT_KEY_PEM,
+        cert: process.env.CERT_PEM || DEFAULT_CERT_PEM
     }
 };

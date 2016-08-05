@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const winston = require('winston');
 
@@ -37,7 +38,10 @@ if (isDevelopment) {
 
     const app = express();
     const secureApp = express();
-    const httpsApp = https.createServer(pems, secureApp);
+    const httpsApp = https.createServer({
+        key: fs.readFileSync(pems.key),
+        cert: fs.readFileSync(pems.cert)
+    }, secureApp);
 
     app.use((req, res) => {
         res.redirect(`https://${ req.headers.host }${ req.path }`);
