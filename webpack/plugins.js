@@ -1,26 +1,25 @@
-const path = require('path');
 const webpack = require('webpack');
 
 const { isDevelopment, isTest } = require('../configuration');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const WebpackSplitByPath = require('webpack-split-by-path');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 
 const basePlugins = [
     new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
         __DEV__: isDevelopment
     }),
-    new WebpackSplitByPath([{
-        name: 'vendor',
-        path: [path.join(__dirname, '../node_modules')]
-    }]),
     new HtmlWebpackPlugin({ template: './src/index.html', inject: 'body' }),
     new CopyWebpackPlugin([{
         from: './src/assets/favicon.ico',
         to: 'assets'
+    }, {
+        from: './src/assets/images',
+        to: 'assets'
     }]),
+    new ImageminWebpackPlugin(),
     new webpack.NoErrorsPlugin()
 ];
 const developmentPlugins = [new webpack.HotModuleReplacementPlugin()];

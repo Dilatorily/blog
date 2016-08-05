@@ -34,7 +34,7 @@ const md = {
 };
 
 const images = {
-    test: /\.(jpe?g|png)$/,
+    test: /\.(jpe?g)$/,
     loaders: ['file?name=assets/[name].[ext]', 'image-webpack'],
     include: /assets/
 };
