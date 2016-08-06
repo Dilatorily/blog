@@ -15,11 +15,13 @@ const basePlugins = [
         from: './src/assets/favicon.ico',
         to: 'assets'
     }]),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.NoErrorsPlugin()
 ];
 const developmentPlugins = [new webpack.HotModuleReplacementPlugin()];
 const productionPlugins = [
     new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
 ];
 
