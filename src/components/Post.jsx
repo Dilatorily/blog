@@ -3,6 +3,7 @@ import moment from 'moment';
 import { Style } from 'radium';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
+import '../assets/images';
 
 import {
     LIGHT_RED,
