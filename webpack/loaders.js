@@ -35,23 +35,38 @@ const md = {
 
 const images = {
     test: /\.(jpe?g|png)$/,
-    loaders: ['file?name=assets/[name].[ext]', 'image-webpack'],
+    loaders: [{
+        loader: 'file',
+        query: { name: 'assets/[name].[ext]' }
+    }, 'image-webpack'],
     include: /assets/
 };
 
 const fonts = [
     {
         test: /\.woff2?(\?.*)?$/,
-        loader: 'url?limit=10000&mimetype=application/font-woff'
+        loader: 'url',
+        query: {
+            limit: 10000,
+            mimetype: 'application/font-woff'
+        }
     }, {
         test: /\.ttf(\?.*)?$/,
-        loader: 'url?limit=10000&mimetype=application/octet-stream'
+        loader: 'url',
+        query: {
+            limit: 10000,
+            mimetype: 'application/octet-stream'
+        }
     }, {
         test: /\.eot(\?.*)?$/,
         loader: 'file'
     }, {
         test: /\.svg(\?.*)?$/,
-        loader: 'url?limit=10000&mimetype=image/svg+xml'
+        loader: 'url',
+        query: {
+            limit: 10000,
+            mimetype: 'image/svg+xml'
+        }
     }
 ];
 
