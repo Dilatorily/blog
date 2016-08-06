@@ -33,14 +33,18 @@ const md = {
     loader: 'raw'
 };
 
-const images = {
-    test: /\.(jpe?g|png)$/,
-    loaders: [{
+const images = [
+    {
+        test: /\.(jpe?g|png)$/,
         loader: 'file',
-        query: { name: 'assets/[name].[ext]' }
-    }, 'image-webpack'],
-    include: /assets/
-};
+        query: { name: 'assets/[name].[ext]' },
+        include: /assets/
+    }, {
+        test: /\.(jpe?g|png)$/,
+        loader: 'image-webpack',
+        include: /assets/
+    }
+];
 
 const fonts = [
     {
@@ -72,5 +76,5 @@ const fonts = [
 
 module.exports = {
     preLoaders: isTest ? [preTestJsx] : [preJsx],
-    loaders: [jsx, css, json, md, images, ...fonts]
+    loaders: [jsx, css, json, md, ...images, ...fonts]
 };
