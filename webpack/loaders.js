@@ -28,10 +28,16 @@ const json = {
     loader: 'json'
 };
 
-const md = {
-    test: /\.md$/,
-    loader: 'raw'
-};
+const md = [
+    {
+        test: /\.md$/,
+        loader: 'raw'
+    }, {
+        test: /\.md$/,
+        loader: 'remarkable',
+        query: { html: true }
+    }
+];
 
 const images = [
     {
@@ -76,5 +82,5 @@ const fonts = [
 
 module.exports = {
     preLoaders: isTest ? [preTestJsx] : [preJsx],
-    loaders: [jsx, css, json, md, ...images, ...fonts]
+    loaders: [jsx, css, json, ...md, ...images, ...fonts]
 };
