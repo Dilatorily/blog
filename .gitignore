@@ -1,9 +1,11 @@
 .*
 !.babelrc
-!.eslintrc.js
+!.editorconfig
+!.eslintrc
 !.gitignore
 *.log
 *.pem
 coverage
 node_modules
 public
+views

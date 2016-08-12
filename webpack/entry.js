@@ -1,13 +1,6 @@
-const { isDevelopment, port } = require('../configuration');
+const { isDevelopment } = require('../configuration');
 
-const baseApplication = ['babel-polyfill', './src/index.jsx'];
-const developmentApplication = [
-    'react-hot-loader/patch',
-    `webpack-dev-server/client?http://localhost:${ port }`,
-    'webpack/hot/only-dev-server'
-];
-const application = isDevelopment ?
-    developmentApplication.concat(baseApplication) :
-    baseApplication;
+const baseEntry = ['babel-polyfill', './src/client/index.jsx'];
+const developmentEntry = ['react-hot-loader/patch', 'webpack-hot-middleware/client'];
 
-module.exports = application;
+module.exports = isDevelopment ? developmentEntry.concat(baseEntry) : baseEntry;
