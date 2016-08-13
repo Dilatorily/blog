@@ -1,8 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 import { Style } from 'radium';
-import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
 import '../assets/images';
 
 import {
@@ -21,11 +19,6 @@ import {
     DARK_GREY
 } from '../constants/style';
 import posts from '../assets/posts';
-
-const mapStateToProps = () => ({});
-const mapDispatchToProps = (dispatch) => (
-    { redirect: () => dispatch(push('/')) }
-);
 
 const styles = {
     date: {
@@ -122,39 +115,27 @@ const styles = {
     blockquote: { p: { margin: 0 } }
 };
 
-class Post extends React.Component {
-    componentWillMount() {
-        const { redirect, params: { date } } = this.props;
-        if (!posts[date]) {
-            redirect();
-        }
-    }
+const Post = (props) => {
+    const { params: { date } } = props;
+    const markup = { __html: posts[date] };
 
-    render() {
-        const { params: { date } } = this.props;
-        const markup = { __html: posts[date] };
-
-        return (
-            <div>
-                <div style={ styles.date }>
-                    { moment(date).format('dddd, MMMM Do, YYYY') }
-                </div>
-                <div
-                    className="post"
-                    dangerouslySetInnerHTML={ markup }
-                />
-                <Style
-                    scopeSelector=".post"
-                    rules={ styles.post }
-                />
+    return (
+        <div>
+            <div style={ styles.date }>
+                { moment(date).format('dddd, MMMM Do, YYYY') }
             </div>
-        );
-    }
-}
-
-Post.propTypes = {
-    redirect: React.PropTypes.func.isRequired,
-    params: React.PropTypes.object.isRequired
+            <div
+                className="post"
+                dangerouslySetInnerHTML={ markup }
+            />
+            <Style
+                scopeSelector=".post"
+                rules={ styles.post }
+            />
+        </div>
+    );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Post);
+Post.propTypes = { params: React.PropTypes.object.isRequired };
+
+export default Post;

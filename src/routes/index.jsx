@@ -4,6 +4,13 @@ import { Route, IndexRoute, Redirect } from 'react-router';
 import App from '../components/App';
 import Home from '../components/Home';
 import Post from '../components/Post';
+import posts from '../assets/posts';
+
+const validatePost = (nextState, replace) => {
+    if (!posts[nextState.params.date]) {
+        replace('/');
+    }
+};
 
 const routes = (
     <Route
@@ -13,6 +20,7 @@ const routes = (
         <Route
             path="posts/:date"
             component={ Post }
+            onEnter={ validatePost }
         />
         <IndexRoute component={ Home } />
         <Redirect

@@ -6,15 +6,13 @@ import 'raleway-webfont/raleway.css';
 import 'roboto-mono-webfont/roboto-mono.css';
 
 import Root from './components/Root';
-import { configureStore } from './store';
 import { isDevelopment } from './utils';
 
 const root = document.getElementById('root');
-const store = configureStore();
 
 render(
     <AppContainer>
-        <Root store={ store } />
+        <Root />
     </AppContainer>,
     root
 );
@@ -24,7 +22,7 @@ if (isDevelopment && module.hot) {
         const NextRoot = require('./components/Root').default;
         render(
             <AppContainer>
-                <NextRoot store={ store } />
+                <NextRoot />
             </AppContainer>,
             root
         );
