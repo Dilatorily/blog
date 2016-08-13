@@ -1,5 +1,10 @@
 const { isTest } = require('../configuration');
 
+const html = {
+    test: /\.html$/,
+    loader: 'html'
+};
+
 const preJsx = {
     test: /\.jsx?$/,
     loaders: ['source-map', 'eslint'],
@@ -82,5 +87,5 @@ const fonts = [
 
 module.exports = {
     preLoaders: isTest ? [preTestJsx] : [preJsx],
-    loaders: [jsx, css, json, ...md, ...images, ...fonts]
+    loaders: [html, jsx, css, json, ...md, ...images, ...fonts]
 };
