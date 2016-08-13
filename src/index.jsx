@@ -2,7 +2,6 @@ import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import 'normalize.css';
-import 'font-awesome/css/font-awesome.css';
 import 'raleway-webfont/raleway.css';
 import 'roboto-mono-webfont/roboto-mono.css';
 
