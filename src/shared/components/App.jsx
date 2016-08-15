@@ -92,6 +92,11 @@ const github = 'M768 1408q209 0 385.5 -103t279.5 -279.5t103 -385.5q0 -251 -146.5
     '-20 3q-9 -8 4 -19q12 -12 20 -3zM451 159q3 11 -13 16q-15 4 -19 -7t13 -15q15 -6 19 6z M514 154' +
     'q0 13 -17 11q-16 0 -16 -11q0 -13 17 -11q16 0 16 11zM572 164q-2 11 -18 9q-16 -3 -14 -15t18 -8' +
     't14 14z';
+const twitter = 'M1620 1128q-67 -98 -162 -167q1 -14 1 -42q0 -130 -38 -259.5t-115.5 -248.5t-184.5 ' +
+    '-210.5t-258 -146t-323 -54.5q-271 0 -496 145q35 -4 78 -4q225 0 401 138q-105 2 -188 64.5t-114 ' +
+    '159.5q33 -5 61 -5q43 0 85 11q-112 23 -185.5 111.5t-73.5 205.5v4q68 -38 146 -41 q-66 44 -105 ' +
+    '115t-39 154q0 88 44 163q121 -149 294.5 -238.5t371.5 -99.5q-8 38 -8 74q0 134 94.5 228.5t228.5' +
+    ' 94.5q140 0 236 -102q109 21 205 78q-37 -115 -142 -178q93 10 186 50z';
 
 const App = (props) =>
   <div style={styles.container}>
@@ -103,7 +108,7 @@ const App = (props) =>
         <div style={styles.headerTextContainer}>
           <div style={styles.name}>Huy Dang Lê-Ngô</div>
           <div>
-            Software Engineer
+            Software Engineer&nbsp;
             <a title="Interset" href="https://www.interset.com" className="link" style={styles.link}>
               @Interset
             </a>
@@ -117,6 +122,11 @@ const App = (props) =>
             <a key="github" key="github" title="GitHub" href="https://github.com/Dilatorily" className="link" style={[styles.link, styles.icon]}>
               <svg height={20} width={20} viewBox="0 0 1792 1792">
                 <path transform={'scale(1,-1) translate(0,-1536)'} d={github} />
+              </svg>
+            </a>
+            <a key="twitter" title="Twitter" href="https://twitter.com/Dagneau" className="link" style={[styles.link, styles.icon]}>
+              <svg height={20} width={20} viewBox="0 0 1792 1792">
+                <path transform={'scale(1,-1) translate(0,-1536)'} d={twitter} />
               </svg>
             </a>
           </div>
