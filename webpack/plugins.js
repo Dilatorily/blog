@@ -1,31 +1,37 @@
-const webpack = require('webpack');
-
+const webpack = require('webpack'); // eslint-disable-line import/no-extraneous-dependencies
+const ExtractTextPlugin = require('extract-text-webpack-plugin'); // eslint-disable-line import/no-extraneous-dependencies, max-len
+const HtmlPlugin = require('html-webpack-plugin'); // eslint-disable-line import/no-extraneous-dependencies, max-len
 const { isDevelopment, isTest } = require('../configuration');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const basePlugins = [
-    new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-        __DEV__: isDevelopment
-    }),
-    new HtmlWebpackPlugin({ template: './src/index.html', inject: 'body' }),
-    new CopyWebpackPlugin([{
-        from: './src/assets/favicon.ico',
-        to: 'assets'
-    }]),
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    new webpack.NoErrorsPlugin()
+  new webpack.DefinePlugin({
+    'process.env': {
+      CLIENT: JSON.stringify(true),
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+    },
+  }),
+  new ExtractTextPlugin('[name].[hash].css'),
+  new HtmlPlugin({
+    filename: isDevelopment ? 'index.html' : '../views/index.html',
+    template: 'src/shared/index.jsx',
+    favicon: 'src/shared/assets/favicon.ico',
+  }),
+  new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+  new webpack.NoErrorsPlugin(),
+];
+const testPlugins = [
+  new webpack.DefinePlugin({
+    'process.env.CLIENT': JSON.stringify(true),
+  }),
 ];
 const developmentPlugins = [new webpack.HotModuleReplacementPlugin()];
 const productionPlugins = [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
+  new webpack.optimize.DedupePlugin(),
+  new webpack.optimize.OccurrenceOrderPlugin(),
+  new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
 ];
 
-module.exports = isTest ? undefined : basePlugins.concat(isDevelopment ?
-    developmentPlugins :
-    productionPlugins
-);
+module.exports = isTest ?
+  testPlugins :
+  basePlugins.concat(isDevelopment ? developmentPlugins : productionPlugins);
