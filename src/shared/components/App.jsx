@@ -1,5 +1,5 @@
 import React from 'react';
-import radium from 'radium';
+import radium, { Style } from 'radium';
 import { Link } from 'react-router';
 
 import avatar from '../assets/avatar.jpg';
@@ -18,6 +18,20 @@ const styles = {
       height: 214,
       marginBottom: 30,
     },
+    '.avatar': {
+      borderRadius: '50%',
+    },
+    '.avatar:hover': {
+      borderRadius: 25,
+    },
+    '.link': {
+      color: LIGHT_GREY,
+      fill: LIGHT_GREY,
+    },
+    '.link:hover': {
+      color: WHITE,
+      fill: WHITE,
+    },
   },
   avatarContainer: {
     textAlign: 'center',
@@ -28,11 +42,7 @@ const styles = {
     verticalAlign: 'middle',
     marginRight: 20,
     width: 100,
-    borderRadius: '50%',
     transition: '0.25s ease-in-out',
-    ':hover': {
-      borderRadius: 25,
-    },
     '@media only screen and (max-width: 360px)': {
       marginBottom: 10,
     },
@@ -51,20 +61,12 @@ const styles = {
     fontWeight: 600,
   },
   link: {
-    color: LIGHT_GREY,
     textDecoration: 'none',
     transition: '0.25s ease-in-out',
-    ':hover': {
-      color: WHITE,
-    },
   },
   icon: {
     marginRight: 2,
     fontSize: 20,
-    fill: LIGHT_GREY,
-    ':hover': {
-      fill: WHITE,
-    },
   },
   contentContainer: {
     maxWidth: 720,
@@ -93,26 +95,26 @@ const github = 'M768 1408q209 0 385.5 -103t279.5 -279.5t103 -385.5q0 -251 -146.5
 
 const App = (props) =>
   <div style={styles.container}>
-    <header style={styles.header}>
+    <header className="header">
       <div style={styles.avatarContainer}>
         <Link to="/">
-          <img key="avatar" alt="avatar" src={avatar} style={styles.avatar} />
+          <img key="avatar" alt="avatar" src={avatar} className="avatar" style={styles.avatar} />
         </Link>
         <div style={styles.headerTextContainer}>
           <div style={styles.name}>Huy Dang Lê-Ngô</div>
           <div>
             Software Engineer
-            <a key="company" title="Interset" href="https://www.interset.com" style={styles.link}>
+            <a title="Interset" href="https://www.interset.com" className="link" style={styles.link}>
               @Interset
             </a>
           </div>
           <div>
-            <a key="linkedin" title="LinkedIn" href="https://www.linkedin.com/in/dilatorily" style={[styles.link, styles.icon]}>
+            <a key="linkedin" title="LinkedIn" href="https://www.linkedin.com/in/dilatorily" className="link" style={[styles.link, styles.icon]}>
               <svg height={20} width={20} viewBox="0 0 1792 1792">
                 <path transform={'scale(1,-1) translate(0,-1536)'} d={linkedin} />
               </svg>
             </a>
-            <a key="github" title="GitHub" href="https://github.com/Dilatorily" style={[styles.link, styles.icon]}>
+            <a key="github" key="github" title="GitHub" href="https://github.com/Dilatorily" className="link" style={[styles.link, styles.icon]}>
               <svg height={20} width={20} viewBox="0 0 1792 1792">
                 <path transform={'scale(1,-1) translate(0,-1536)'} d={github} />
               </svg>
@@ -122,6 +124,7 @@ const App = (props) =>
       </div>
     </header>
     <div style={styles.contentContainer}>{props.children}</div>
+    <Style scopeSelector=".header" rules={styles.header} />
   </div>
 ;
 

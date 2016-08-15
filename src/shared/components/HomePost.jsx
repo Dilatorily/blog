@@ -1,16 +1,23 @@
 import React from 'react';
-import radium from 'radium';
+import { Style } from 'radium';
 import { Link } from 'react-router';
 
 import { RED, LIGHT_BLUE, DARK_GREY, LIGHT_GREY } from '../constants/style';
 import { getContentFromFirstTag } from '../utils';
 
 const styles = {
+  homePost: {
+    h3: {
+      color: RED,
+    },
+    ':hover h2, :hover h3': {
+      color: LIGHT_BLUE,
+    },
+  },
   post: {
     paddingBottom: 20,
     marginBottom: 20,
     borderBottom: `1px solid ${LIGHT_GREY}`,
-    ':hover': {},
   },
   link: {
     color: DARK_GREY,
@@ -26,9 +33,6 @@ const styles = {
     fontSize: 32,
     fontWeight: 600,
     transition: '0.25s ease-in-out',
-  },
-  hovered: {
-    color: LIGHT_BLUE,
   },
   description: {
     margin: 0,
@@ -47,44 +51,30 @@ const styles = {
     fontWeight: 500,
     fontStyle: 'italic',
     textAlign: 'right',
-    color: RED,
     transition: '0.25s ease-in-out',
   },
 };
 
-class HomePost extends React.Component {
-  render() {
-    return (
-      <li key="post" style={styles.post}>
-        <Link style={styles.link} to={`/posts/${this.props.date.format('YYYY-MM-DD')}`}>
-          <div style={styles.article}>
-            <h2
-              style={[
-                styles.title,
-                radium.getState(this.state, 'post', ':hover') ? styles.hovered : null,
-              ]}
-            >
-              {getContentFromFirstTag(this.props.post, 'h1')}
-            </h2>
-            <p style={styles.description}>{getContentFromFirstTag(this.props.post, 'p')}</p>
-          </div>
-          <h3
-            style={[
-              styles.date,
-              radium.getState(this.state, 'post', ':hover') ? styles.hovered : null,
-            ]}
-          >
-            {this.props.date.format('MMMM Do, YYYY')}
-          </h3>
-        </Link>
-      </li>
-    );
-  }
-}
+const HomePost = (props) => (
+  <li className="home-post" style={styles.post}>
+    <Link style={styles.link} to={`/posts/${props.date.format('YYYY-MM-DD')}`}>
+      <div style={styles.article}>
+        <h2 style={styles.title}>
+          {getContentFromFirstTag(props.post, 'h1')}
+        </h2>
+        <p style={styles.description}>{getContentFromFirstTag(props.post, 'p')}</p>
+      </div>
+      <h3 style={styles.date}>
+        {props.date.format('MMMM Do, YYYY')}
+      </h3>
+    </Link>
+    <Style scopeSelector=".home-post" rules={styles.homePost} />
+  </li>
+);
 
 HomePost.propTypes = {
   post: React.PropTypes.string.isRequired,
   date: React.PropTypes.object.isRequired,
 };
 
-export default radium(HomePost);
+export default HomePost;
