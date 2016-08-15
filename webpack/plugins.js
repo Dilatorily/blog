@@ -13,8 +13,8 @@ const basePlugins = [
   }),
   new ExtractTextPlugin('[name].[hash].css'),
   new HtmlPlugin({
-    filename: isDevelopment ? 'index.html' : '../views/index.html',
-    template: 'src/shared/index.jsx',
+    filename: isDevelopment ? 'index.html' : '../src/server/index.html',
+    template: 'src/server/components/index.jsx',
     favicon: 'src/shared/assets/favicon.ico',
   }),
   new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),

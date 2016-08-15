@@ -1,5 +1,5 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin'); // eslint-disable-line import/no-extraneous-dependencies, max-len
-const { isTest } = require('../configuration');
+const { isTest, isServer } = require('../configuration');
 
 const preJsx = { test: /\.jsx?/, loaders: ['source-map', 'eslint'], exclude: /node_modules/ };
 const jsx = { test: /\.jsx?$/, loader: 'babel', exclude: /node_modules/ };
@@ -12,7 +12,7 @@ const md = [
   { test: /\.md$/, loader: 'raw' },
   { test: /\.md$/, loader: 'remarkable', query: { html: true } },
 ];
-const images = [
+const baseImages = [
   {
     test: /\.(jpe?g|png)$/,
     loader: 'file',
@@ -21,8 +21,10 @@ const images = [
     },
     include: /assets/,
   },
-  { test: /\.(jpe?g|png)$/, loader: 'image-webpack', include: /assets/ },
 ];
+const images = baseImages.concat(isServer ? [] : [
+  { test: /\.(jpe?g|png)$/, loader: 'image-webpack', include: /assets/ },
+]);
 const fonts = [
   {
     test: /\.woff2?(\?.*)?$/,

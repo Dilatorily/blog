@@ -5,7 +5,7 @@
 !.gitignore
 *.log
 *.pem
+index.html
 coverage
 node_modules
 public
-views
