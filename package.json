@@ -7,7 +7,7 @@
     "prebuild": "npm run clean",
     "build": "NODE_ENV=production webpack",
     "test": "NODE_ENV=test karma start",
-    "dev": "PORT=8080 NODE_ENV=development node .",
+    "dev": "PORT=8080 NODE_ENV=development webpack-dashboard -- node .",
     "start": "SERVER=true NODE_ENV=production forever start .",
     "stop": "SERVER=true NODE_ENV=production forever stopall",
     "restart": "SERVER=true NODE_ENV=production forever restartall"
@@ -71,7 +71,7 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
-    "webpack-dashboard": "^0.0.1",
+    "webpack-dashboard": "^0.1.1",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.12.2",
     "winston": "^2.2.0"
