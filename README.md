@@ -1,6 +1,6 @@
 # fictional-octo-spork
 
-[![Build Status](https://travis-ci.org/Dilatorily/fictional-octo-spork.svg?branch=master&style=flat-square)](https://travis-ci.org/Dilatorily/fictional-octo-spork)
+[![Build Status](https://travis-ci.org/Dilatorily/fictional-octo-spork.svg?branch=master?style=flat-square)](https://travis-ci.org/Dilatorily/fictional-octo-spork)
 
 This repository gives a history and reasoning to every choices on setting up a Frontend stack with *Babel*, *Webpack*, *React* and *Redux*.
 
