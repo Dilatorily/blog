@@ -28,6 +28,9 @@ module.exports = (configuration) => {
     logLevel: configuration.LOG_INFO,
     coverageReporter: {
       subdir: '.',
+      reporters: [
+        { type: 'lcovonly', subdir: '.' },
+      ],
     },
   });
 };
