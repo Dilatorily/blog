@@ -6,7 +6,7 @@
     "clean": "rimraf public src/server/index.html",
     "prebuild": "npm run clean",
     "build": "NODE_ENV=production webpack",
-    "test": "NODE_ENV=test nyc -r=lcov -e .jsx -n=src/**/*.{js,jsx} node .",
+    "test": "NODE_ENV=test nyc --instrument=false -r=lcov node .",
     "dev": "PORT=8080 NODE_ENV=development webpack-dashboard -- node .",
     "start": "SERVER=true NODE_ENV=production forever start .",
     "stop": "SERVER=true NODE_ENV=production forever stopall",
