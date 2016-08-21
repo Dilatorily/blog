@@ -1,7 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import { expect } from 'chai'; // eslint-disable-line import/no-extraneous-dependencies
-import { shallow } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
+import { mount } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
 
 import Home from '../Home';
 import HomePost from '../HomePost';
@@ -11,10 +10,12 @@ import posts from '../../assets/posts';
 describe('<Home />', () => {
   let node;
   beforeEach(() => {
-    node = shallow(<Home />);
+    node = mount(<Home />);
   });
 
   it('renders properly', () => {
-    expect(node).to.contain(<HomePost post={posts['2016-07-18']} date={moment('2016-07-18')} />);
+    expect(node).toContainReact(
+      <HomePost post={posts['2016-07-18']} date={moment('2016-07-18')} />
+    );
   });
 });
