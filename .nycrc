@@ -1,0 +1,4 @@
+{
+  "instrument": false,
+  "reporter": ["lcov"]
+}
