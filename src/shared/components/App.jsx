@@ -98,7 +98,7 @@ const twitter = 'M1620 1128q-67 -98 -162 -167q1 -14 1 -42q0 -130 -38 -259.5t-115
     '115t-39 154q0 88 44 163q121 -149 294.5 -238.5t371.5 -99.5q-8 38 -8 74q0 134 94.5 228.5t228.5' +
     ' 94.5q140 0 236 -102q109 21 205 78q-37 -115 -142 -178q93 10 186 50z';
 
-const App = (props) =>
+const App = prop =>
   <div style={styles.container}>
     <header className="header">
       <div style={styles.avatarContainer}>
@@ -119,7 +119,7 @@ const App = (props) =>
                 <path transform={'scale(1,-1) translate(0,-1536)'} d={linkedin} />
               </svg>
             </a>
-            <a key="github" key="github" title="GitHub" href="https://github.com/Dilatorily" className="link" style={[styles.link, styles.icon]}>
+            <a key="github" title="GitHub" href="https://github.com/Dilatorily" className="link" style={[styles.link, styles.icon]}>
               <svg height={20} width={20} viewBox="0 0 1792 1792">
                 <path transform={'scale(1,-1) translate(0,-1536)'} d={github} />
               </svg>
@@ -133,7 +133,7 @@ const App = (props) =>
         </div>
       </div>
     </header>
-    <div style={styles.contentContainer}>{props.children}</div>
+    <div style={styles.contentContainer}>{prop.children}</div>
     <Style scopeSelector=".header" rules={styles.header} />
   </div>
 ;

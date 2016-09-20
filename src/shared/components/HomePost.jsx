@@ -55,17 +55,17 @@ const styles = {
   },
 };
 
-const HomePost = (props) => (
+const HomePost = prop => (
   <li className="home-post" style={styles.post}>
-    <Link style={styles.link} to={`/posts/${props.date.format('YYYY-MM-DD')}`}>
+    <Link style={styles.link} to={`/posts/${prop.date.format('YYYY-MM-DD')}`}>
       <div style={styles.article}>
         <h2 style={styles.title}>
-          {getContentFromFirstTag(props.post, 'h1')}
+          {getContentFromFirstTag(prop.post, 'h1')}
         </h2>
-        <p style={styles.description}>{getContentFromFirstTag(props.post, 'p')}</p>
+        <p style={styles.description}>{getContentFromFirstTag(prop.post, 'p')}</p>
       </div>
       <h3 style={styles.date}>
-        {props.date.format('MMMM Do, YYYY')}
+        {prop.date.format('MMMM Do, YYYY')}
       </h3>
     </Link>
     <Style scopeSelector=".home-post" rules={styles.homePost} />
@@ -74,7 +74,9 @@ const HomePost = (props) => (
 
 HomePost.propTypes = {
   post: React.PropTypes.string.isRequired,
-  date: React.PropTypes.object.isRequired,
+  date: React.PropTypes.shape({
+    format: React.PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 export default HomePost;

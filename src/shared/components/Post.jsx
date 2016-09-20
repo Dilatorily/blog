@@ -157,19 +157,25 @@ const styles = {
   },
 };
 
-const Post = (props) => {
-  const { params: { date } } = props;
+const Post = (prop) => {
+  const { params: { date } } = prop;
   const markup = { __html: posts[date] };
 
   return (
+    /* eslint-disable react/no-danger */
     <div>
       <div style={styles.date}>{moment(date).format('dddd, MMMM Do, YYYY')}</div>
       <div className="post" dangerouslySetInnerHTML={markup} />
       <Style scopeSelector=".post" rules={styles.post} />
     </div>
+    /* eslint-enable react/no-danger */
   );
 };
 
-Post.propTypes = { params: React.PropTypes.object.isRequired };
+Post.propTypes = {
+  params: React.PropTypes.shape({
+    date: React.PropTypes.number.isRequired,
+  }).isRequired,
+};
 
 export default Post;
