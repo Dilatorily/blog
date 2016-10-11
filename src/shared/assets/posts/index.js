@@ -13,7 +13,7 @@ if (process.env.CLIENT) {
   fs.readdirSync(__dirname).forEach((file) => {
     if (file.substr(-3) === '.md') {
       const date = file.slice(0, -3);
-      posts[date] = require(path.join(__dirname, file)); // eslint-disable-line global-require
+      posts[date] = require(path.join(__dirname, file)); // eslint-disable-line global-require, import/no-dynamic-require, max-len
     }
   });
 }
