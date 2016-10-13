@@ -51,7 +51,7 @@
     "html-webpack-plugin": "^2.22.0",
     "image-webpack-loader": "^2.0.0",
     "jasmine": "^2.5.2",
-    "jasmine-enzyme": "^1.2.0",
+    "jasmine-enzyme": "^2.0.0",
     "jasmine-spec-reporter": "^2.7.0",
     "jsdom": "^9.6.0",
     "node-webpack": "^0.0.3",
