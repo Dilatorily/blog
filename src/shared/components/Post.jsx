@@ -174,7 +174,7 @@ const Post = (prop) => {
 
 Post.propTypes = {
   params: React.PropTypes.shape({
-    date: React.PropTypes.number.isRequired,
+    date: React.PropTypes.string.isRequired,
   }).isRequired,
 };
 
