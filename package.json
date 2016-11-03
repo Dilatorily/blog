@@ -68,10 +68,5 @@
     "webpack-dev-middleware": "^1.8.4",
     "webpack-hot-middleware": "^2.13.1",
     "winston": "^2.3.0"
-  },
-  "greenkeeper": {
-    "ignore": [
-      "eslint-plugin-import"
-    ]
   }
 }
