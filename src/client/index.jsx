@@ -15,7 +15,7 @@ render(
   <AppContainer>
     <Root />
   </AppContainer>,
-  root
+  root,
 );
 
 if (isDevelopment && module.hot) {
@@ -26,7 +26,7 @@ if (isDevelopment && module.hot) {
       <AppContainer>
         <NextRoot />
       </AppContainer>,
-      root
+      root,
     );
   });
 }
