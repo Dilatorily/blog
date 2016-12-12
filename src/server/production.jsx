@@ -43,7 +43,7 @@ export default () => {
         const root = renderToStaticMarkup(
           <StyleRoot radiumConfig={{ userAgent: request.headers['user-agent'] }}>
             <RouterContext {...props} />
-          </StyleRoot>
+          </StyleRoot>,
         );
         response.status(200).send(index.replace('<!-- root -->', root));
       }

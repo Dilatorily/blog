@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from 'moment';
 import { mount } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
 
 import Home from '../Home';
@@ -15,7 +14,7 @@ describe('<Home />', () => {
 
   it('renders properly', () => {
     expect(node).toContainReact(
-      <HomePost post={posts['2016-07-18']} date={moment('2016-07-18')} />
+      <HomePost post={posts['2016-07-18']} date={'2016-07-18'} />,
     );
   });
 });

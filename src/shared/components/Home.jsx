@@ -1,6 +1,7 @@
 import React from 'react';
-import radium from 'radium';
-import moment from 'moment';
+import Radium from 'radium';
+import isAfter from 'date-fns/is_after';
+import isBefore from 'date-fns/is_before';
 
 import posts from '../assets/posts';
 import HomePost from './HomePost';
@@ -14,9 +15,9 @@ const styles = {
 };
 
 const compareDateDesc = (a, b) => {
-  if (moment(a).isAfter(moment(b))) {
+  if (isAfter(new Date(a), new Date(b))) {
     return -1;
-  } else if (moment(a).isBefore(moment(b))) {
+  } else if (isBefore(new Date(a), new Date(b))) {
     return 1;
   }
 
@@ -28,9 +29,9 @@ const Home = () =>
     {
       Object.keys(posts)
         .sort(compareDateDesc)
-        .map((date, index) => <HomePost key={index} post={posts[date]} date={moment(date)} />)
+        .map((date, index) => <HomePost key={index} post={posts[date]} date={date} />)
     }
   </ul>
 ;
 
-export default radium(Home);
+export default Radium(Home);

@@ -6,7 +6,6 @@ const analytics = {
 };
 
 const Html = () => (
-  /* eslint-disable react/no-danger */
   <html lang="en">
     <head>
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -15,11 +14,12 @@ const Html = () => (
       <title>Huy Dang Lê-Ngô&#39;s Blog</title>
     </head>
     <body>
+      {/* eslint-disable react/no-danger */}
       <div id="root" dangerouslySetInnerHTML={root} />
       <script dangerouslySetInnerHTML={analytics} />
+      {/* eslint-enable react/no-danger */}
     </body>
   </html>
-  /* eslint-enable react/no-danger */
 );
 
 export default Html;

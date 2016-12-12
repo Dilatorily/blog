@@ -1,5 +1,5 @@
 import React from 'react';
-import radium, { Style } from 'radium';
+import Radium, { Style } from 'radium';
 import { Link } from 'react-router';
 
 import avatar from '../assets/avatar.jpg';
@@ -140,4 +140,4 @@ const App = prop =>
 
 App.propTypes = { children: React.PropTypes.node };
 
-export default radium(App);
+export default Radium(App);

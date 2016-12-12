@@ -1,6 +1,6 @@
 import React from 'react';
-import moment from 'moment';
 import { Style } from 'radium';
+import format from 'date-fns/format';
 
 import {
   LIGHT_RED,
@@ -162,13 +162,13 @@ const Post = (prop) => {
   const markup = { __html: posts[date] };
 
   return (
-    /* eslint-disable react/no-danger */
     <div>
-      <div style={styles.date}>{moment(date).format('dddd, MMMM Do, YYYY')}</div>
+      <div style={styles.date}>{format(date, 'dddd, MMMM Do, YYYY')}</div>
+      {/* eslint-disable react/no-danger */}
       <div className="post" dangerouslySetInnerHTML={markup} />
+      {/* eslint-enable react/no-danger */}
       <Style scopeSelector=".post" rules={styles.post} />
     </div>
-    /* eslint-enable react/no-danger */
   );
 };
 

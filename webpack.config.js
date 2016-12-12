@@ -9,7 +9,7 @@ module.exports = {
   context: __dirname,
   entry,
   output,
-  devtool: isDevelopment ? 'eval' : undefined,
+  devtool: isDevelopment ? 'eval-source-map' : false,
   resolve: { extensions: ['', '.js', '.jsx', '.json'] },
   plugins,
   module: loaders,

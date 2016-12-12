@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; // eslint-disable-line
 import { StyleRoot } from 'radium';
 import { Router, browserHistory } from 'react-router';
 import routes from '../../shared/routes';

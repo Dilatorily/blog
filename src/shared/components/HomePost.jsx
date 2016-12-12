@@ -1,6 +1,7 @@
 import React from 'react';
 import { Style } from 'radium';
 import { Link } from 'react-router';
+import format from 'date-fns/format';
 
 import { RED, LIGHT_BLUE, DARK_GREY, LIGHT_GREY } from '../constants/style';
 import { getContentFromFirstTag } from '../utils';
@@ -57,7 +58,7 @@ const styles = {
 
 const HomePost = prop => (
   <li className="home-post" style={styles.post}>
-    <Link style={styles.link} to={`/posts/${prop.date.format('YYYY-MM-DD')}`}>
+    <Link style={styles.link} to={`/posts/${prop.date}`}>
       <div style={styles.article}>
         <h2 style={styles.title}>
           {getContentFromFirstTag(prop.post, 'h1')}
@@ -65,7 +66,7 @@ const HomePost = prop => (
         <p style={styles.description}>{getContentFromFirstTag(prop.post, 'p')}</p>
       </div>
       <h3 style={styles.date}>
-        {prop.date.format('MMMM Do, YYYY')}
+        {format(new Date(prop.date), 'MMMM Do, YYYY')}
       </h3>
     </Link>
     <Style scopeSelector=".home-post" rules={styles.homePost} />
@@ -74,9 +75,7 @@ const HomePost = prop => (
 
 HomePost.propTypes = {
   post: React.PropTypes.string.isRequired,
-  date: React.PropTypes.shape({
-    format: React.PropTypes.func.isRequired,
-  }).isRequired,
+  date: React.PropTypes.string.isRequired,
 };
 
 export default HomePost;
