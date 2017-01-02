@@ -52,7 +52,7 @@
     "image-webpack-loader": "^3.1.0",
     "jasmine": "^2.5.2",
     "jasmine-enzyme": "^2.0.0",
-    "jasmine-spec-reporter": "^2.7.0",
+    "jasmine-spec-reporter": "^3.0.0",
     "jsdom": "^9.8.3",
     "node-webpack": "^0.0.3",
     "nyc": "^10.0.0",
