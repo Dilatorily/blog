@@ -10,6 +10,7 @@ const basePlugins = [
       CLIENT: JSON.stringify(true),
       NODE_ENV: JSON.stringify(process.env.NODE_ENV),
     },
+    __DEV__: isDevelopment,
   }),
   new ExtractTextPlugin('[name].[hash].css'),
   new HtmlPlugin({

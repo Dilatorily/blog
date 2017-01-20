@@ -138,6 +138,12 @@ const App = prop =>
   </div>
 ;
 
-App.propTypes = { children: React.PropTypes.node };
+if (__DEV__) {
+  App.propTypes = { children: React.PropTypes.node };
+}
+
+App.defaultProps = {
+  children: null,
+};
 
 export default Radium(App);

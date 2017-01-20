@@ -1,5 +1,5 @@
 import Jasmine from 'jasmine'; // eslint-disable-line import/no-extraneous-dependencies
-import SpecReporter from 'jasmine-spec-reporter'; // eslint-disable-line import/no-extraneous-dependencies, max-len
+import { SpecReporter } from 'jasmine-spec-reporter'; // eslint-disable-line import/no-extraneous-dependencies, max-len
 import { jsdom } from 'jsdom'; // eslint-disable-line import/no-extraneous-dependencies
 
 const window = `

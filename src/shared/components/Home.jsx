@@ -29,7 +29,7 @@ const Home = () =>
     {
       Object.keys(posts)
         .sort(compareDateDesc)
-        .map((date, index) => <HomePost key={index} post={posts[date]} date={date} />)
+        .map(date => <HomePost key={date} post={posts[date]} date={date} />)
     }
   </ul>
 ;
