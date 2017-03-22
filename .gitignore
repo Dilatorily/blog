@@ -3,11 +3,10 @@
 !.editorconfig
 !.eslintrc
 !.gitignore
-!.nycrc
 !.travis.yml
 *.log
 *.pem
-index.html
+build
 coverage
 node_modules
 public

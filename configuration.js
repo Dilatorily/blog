@@ -1,7 +1,5 @@
 module.exports = {
   isDevelopment: process.env.NODE_ENV === 'development',
-  isTest: process.env.NODE_ENV === 'test',
-  isServer: process.env.SERVER === 'true',
   httpsMaxAge: 31536000000,
   cacheMaxAge: 2592000000,
   port: process.env.PORT || 80,

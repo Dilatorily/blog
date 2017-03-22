@@ -1,23 +1,9 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { Style } from 'radium';
 import format from 'date-fns/format';
 
-import {
-  LIGHT_RED,
-  RED,
-  LIGHT_BLUE,
-  DARK_BLUE,
-  DARKER_BLUE,
-  LIGHT_TEAL,
-  DARK_TEAL,
-  LIGHT_GREEN,
-  DARK_GREEN,
-  PURPLE,
-  LIGHT_GREY,
-  NEUTRAL_GREY,
-  DARK_GREY,
-} from '../constants/style';
-import posts from '../assets/posts';
+import { LIGHT_RED, RED, LIGHT_BLUE, DARK_BLUE, DARKER_BLUE, LIGHT_TEAL, DARK_TEAL, LIGHT_GREEN, DARK_GREEN, PURPLE, LIGHT_GREY, NEUTRAL_GREY, DARK_GREY } from '../constants/style';
 
 const styles = {
   date: {
@@ -157,15 +143,18 @@ const styles = {
   },
 };
 
-const Post = (prop) => {
-  const { params: { date } } = prop;
-  const markup = { __html: posts[date] };
+const Post = ({ match: { params: { date } }, posts }) => {
+  if (!posts[date]) {
+    return <Redirect push to="/" />;
+  }
+
+  const post = { __html: posts[date] };
 
   return (
     <div>
       <div style={styles.date}>{format(date, 'dddd, MMMM Do, YYYY')}</div>
       {/* eslint-disable react/no-danger */}
-      <div className="post" dangerouslySetInnerHTML={markup} />
+      <div className="post" dangerouslySetInnerHTML={post} />
       {/* eslint-enable react/no-danger */}
       <Style scopeSelector=".post" rules={styles.post} />
     </div>
@@ -173,9 +162,12 @@ const Post = (prop) => {
 };
 
 Post.propTypes = {
-  params: React.PropTypes.shape({
-    date: React.PropTypes.string.isRequired,
+  match: React.PropTypes.shape({
+    params: React.PropTypes.shape({
+      date: React.PropTypes.string.isRequired,
+    }).isRequired,
   }).isRequired,
+  posts: React.PropTypes.objectOf(React.PropTypes.string).isRequired,
 };
 
 export default Post;

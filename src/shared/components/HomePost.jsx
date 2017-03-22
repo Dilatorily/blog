@@ -1,6 +1,6 @@
 import React from 'react';
 import { Style } from 'radium';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import format from 'date-fns/format';
 
 import { RED, LIGHT_BLUE, DARK_GREY, LIGHT_GREY } from '../constants/style';
@@ -56,17 +56,17 @@ const styles = {
   },
 };
 
-const HomePost = prop => (
+const HomePost = props => (
   <li className="home-post" style={styles.post}>
-    <Link style={styles.link} to={`/posts/${prop.date}`}>
+    <Link style={styles.link} to={`/posts/${props.date}`}>
       <div style={styles.article}>
         <h2 style={styles.title}>
-          {getContentFromFirstTag(prop.post, 'h1')}
+          {getContentFromFirstTag(props.post, 'h1')}
         </h2>
-        <p style={styles.description}>{getContentFromFirstTag(prop.post, 'p')}</p>
+        <p style={styles.description}>{getContentFromFirstTag(props.post, 'p')}</p>
       </div>
       <h3 style={styles.date}>
-        {format(new Date(prop.date), 'MMMM Do, YYYY')}
+        {format(new Date(props.date), 'MMMM Do, YYYY')}
       </h3>
     </Link>
     <Style scopeSelector=".home-post" rules={styles.homePost} />

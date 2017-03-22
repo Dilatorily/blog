@@ -1,9 +1,6 @@
 import React from 'react';
-import Radium from 'radium';
 import isAfter from 'date-fns/is_after';
-import isBefore from 'date-fns/is_before';
 
-import posts from '../assets/posts';
 import HomePost from './HomePost';
 
 const styles = {
@@ -17,14 +14,12 @@ const styles = {
 const compareDateDesc = (a, b) => {
   if (isAfter(new Date(a), new Date(b))) {
     return -1;
-  } else if (isBefore(new Date(a), new Date(b))) {
-    return 1;
   }
 
-  return 0;
+  return 1;
 };
 
-const Home = () =>
+const Home = ({ posts }) => (
   <ul style={styles.posts}>
     {
       Object.keys(posts)
@@ -32,6 +27,10 @@ const Home = () =>
         .map(date => <HomePost key={date} post={posts[date]} date={date} />)
     }
   </ul>
-;
+);
 
-export default Radium(Home);
+Home.propTypes = {
+  posts: React.PropTypes.objectOf(React.PropTypes.string).isRequired,
+};
+
+export default Home;

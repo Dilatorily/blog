@@ -1,21 +1,13 @@
-const posts = {};
+const dates = [
+  '2016-07-18',
+  '2016-08-18',
+  '2016-09-22',
+];
 
-if (process.env.CLIENT) {
-  const files = require.context('./', false, /\.md$/);
-  files.keys().forEach((file) => {
-    const date = file.slice(2, -3);
-    posts[date] = files(file);  // eslint-disable-line global-require
-  });
-} else {
-  const path = require('path'); // eslint-disable-line global-require
-  const fs = require('fs'); // eslint-disable-line global-require
-
-  fs.readdirSync(__dirname).forEach((file) => {
-    if (file.substr(-3) === '.md') {
-      const date = file.slice(0, -3);
-      posts[date] = require(path.join(__dirname, file)); // eslint-disable-line global-require, import/no-dynamic-require, max-len
-    }
-  });
-}
-
-export default posts;
+export default async () => {
+  const files = await Promise.all(dates.map(date => import(`./${date}.md`)));
+  return files.reduce((posts, file, index) => {
+    const date = dates[index];
+    return { ...posts, [date]: file };
+  }, {});
+};
