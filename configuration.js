@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   isDevelopment: process.env.NODE_ENV === 'development',
   httpsMaxAge: 31536000000,
   cacheMaxAge: 2592000000,
