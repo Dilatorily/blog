@@ -4,7 +4,7 @@ import winston from 'winston'; // eslint-disable-line import/no-extraneous-depen
 import express from 'express'; // eslint-disable-line import/no-extraneous-dependencies
 import compression from 'compression'; // eslint-disable-line import/no-extraneous-dependencies
 import helmet from 'helmet'; // eslint-disable-line import/no-extraneous-dependencies
-import https from 'https';
+import spdy from 'spdy'; // eslint-disable-line import/no-extraneous-dependencies
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
@@ -29,7 +29,7 @@ const cert = fs.readFileSync(pems.cert);
 
 const app = express();
 const secureApp = express();
-const httpsApp = https.createServer({ key, cert }, secureApp);
+const httpsApp = spdy.createServer({ key, cert }, secureApp);
 
 (async () => {
   const posts = await getPosts();
