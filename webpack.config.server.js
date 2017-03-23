@@ -1,6 +1,6 @@
 const path = require('path');
-const webpack = require('webpack'); // eslint-disable-line import/no-extraneous-dependencies
-const webpackNodeExternals = require('webpack-node-externals'); // eslint-disable-line import/no-extraneous-dependencies
+const webpack = require('webpack');
+const webpackNodeExternals = require('webpack-node-externals');
 
 const { isDevelopment } = require('./configuration');
 
