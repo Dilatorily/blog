@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
 const WebpackDashboardPlugin = require('webpack-dashboard/plugin');
 
 const { isDevelopment, port } = require('./configuration');
@@ -26,6 +27,7 @@ const basePlugins = [
     minify: { collapseWhitespace: true },
   }),
   new ExtractTextWebpackPlugin('[name].[hash].css'),
+  new StyleExtHtmlWebpackPlugin({ minify: true }),
 ];
 const devPlugins = [
   new webpack.HotModuleReplacementPlugin(),
