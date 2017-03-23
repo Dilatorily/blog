@@ -1,8 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
-const StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
 const WebpackDashboardPlugin = require('webpack-dashboard/plugin');
 
 const { isDevelopment, port } = require('./configuration');
@@ -18,15 +18,14 @@ const entry = isDevelopment ? devEntry.concat(baseEntry) : baseEntry;
 const basePlugins = [
   new webpack.EnvironmentPlugin(['NODE_ENV']),
   new webpack.DefinePlugin({ __DEV__: isDevelopment }),
+  new CopyWebpackPlugin([{ from: 'src/shared/assets/favicon' }]),
   new HtmlWebpackPlugin({
     filename: isDevelopment ? 'index.html' : '../build/index.html',
     template: 'src/shared/index.html',
-    favicon: 'src/shared/assets/favicon.ico',
     inject: 'body',
     minify: { collapseWhitespace: true },
   }),
   new ExtractTextWebpackPlugin('[name].[hash].css'),
-  new StyleExtHtmlWebpackPlugin({ minify: true }),
 ];
 const devPlugins = [
   new webpack.HotModuleReplacementPlugin(),
@@ -53,8 +52,7 @@ module.exports = {
     rules: [
       { test: /\.jsx?$/, loader: 'eslint-loader', enforce: 'pre' },
       { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/, options: { babelrc: false, presets: [['env', { modules: false }], 'stage-0', 'react'], plugins: ['react-hot-loader/babel'] } },
-      { test: /\.css$/, use: ExtractTextWebpackPlugin.extract({ fallback: 'style-loader', use: 'css-loader' }), include: /normalize/ },
-      { test: /\.css$/, use: [{ loader: 'style-loader' }, { loader: 'css-loader' }], exclude: /normalize/ },
+      { test: /\.css$/, use: ExtractTextWebpackPlugin.extract({ fallback: 'style-loader', use: 'css-loader' }) },
       { test: /\.md$/, use: [{ loader: 'raw-loader' }, { loader: 'remarkable-loader', options: { html: true } }] },
       { test: /\.(jpe?g|png)$/, use: [{ loader: 'file-loader', options: { name: 'assets/[name].[ext]' } }, { loader: 'webp-loader' }], include: /assets/ },
       { test: /\.(woff2?|ttf|eot|svg)(\?.*)?$/, loader: 'url-loader', options: { limit: 10000 } },
