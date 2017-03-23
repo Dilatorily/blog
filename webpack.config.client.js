@@ -53,7 +53,8 @@ module.exports = {
     rules: [
       { test: /\.jsx?$/, loader: 'eslint-loader', enforce: 'pre' },
       { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/, options: { babelrc: false, presets: [['env', { modules: false }], 'stage-0', 'react'], plugins: ['react-hot-loader/babel'] } },
-      { test: /\.css$/, use: ExtractTextWebpackPlugin.extract({ fallback: 'style-loader', use: 'css-loader' }) },
+      { test: /\.css$/, use: ExtractTextWebpackPlugin.extract({ fallback: 'style-loader', use: 'css-loader' }), include: /normalize/ },
+      { test: /\.css$/, use: [{ loader: 'style-loader' }, { loader: 'css-loader' }], exclude: /normalize/ },
       { test: /\.md$/, use: [{ loader: 'raw-loader' }, { loader: 'remarkable-loader', options: { html: true } }] },
       { test: /\.(jpe?g|png)$/, use: [{ loader: 'file-loader', options: { name: 'assets/[name].[ext]' } }, { loader: 'image-webpack-loader' }], include: /assets/ },
       { test: /\.(woff2?|ttf|eot|svg)(\?.*)?$/, loader: 'url-loader', options: { limit: 10000 } },
