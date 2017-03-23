@@ -34,12 +34,21 @@ const devPlugins = [
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NamedModulesPlugin(),
   new WebpackDashboardPlugin(),
-  new OfflinePlugin(),
 ];
 const prodPlugins = [
   new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
   new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
-  new OfflinePlugin(),
+  new OfflinePlugin({
+    publicPath: '/',
+    relativePaths: false,
+    ServiceWorker: {
+      events: true,
+      navigateFallbackURL: '/',
+      minify: true,
+    },
+    AppCache: false,
+    externals: ['index.html'],
+  }),
 ];
 const plugins = basePlugins.concat(isDevelopment ? devPlugins : prodPlugins);
 
