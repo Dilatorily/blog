@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { BrowserRouter } from 'react-router-dom';
 import { StyleRoot } from 'radium';
+import * as OfflinePluginRuntime from 'offline-plugin/runtime';
 import 'normalize.css';
 import 'raleway-webfont/raleway.css';
 import 'roboto-mono-webfont/roboto-mono.css';
@@ -11,6 +12,8 @@ import getPosts from '../shared/assets/posts';
 import App from '../shared/components/App';
 import '../shared/assets/avatar.jpg';
 import '../shared/assets/images';
+
+OfflinePluginRuntime.install();
 
 (async () => {
   const posts = await getPosts();

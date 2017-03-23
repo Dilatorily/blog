@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
+const OfflinePlugin = require('offline-plugin');
 const WebpackDashboardPlugin = require('webpack-dashboard/plugin');
 
 const { isDevelopment, port } = require('./configuration');
@@ -33,10 +34,12 @@ const devPlugins = [
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NamedModulesPlugin(),
   new WebpackDashboardPlugin(),
+  new OfflinePlugin(),
 ];
 const prodPlugins = [
   new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
   new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
+  new OfflinePlugin(),
 ];
 const plugins = basePlugins.concat(isDevelopment ? devPlugins : prodPlugins);
 
