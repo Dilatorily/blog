@@ -47,7 +47,6 @@ const prodPlugins = [
       minify: true,
     },
     AppCache: false,
-    excludes: ['build/**/*'],
   }),
 ];
 const plugins = basePlugins.concat(isDevelopment ? devPlugins : prodPlugins);
