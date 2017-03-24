@@ -1,6 +1,7 @@
 {
     "name": "Huy Dang L\u00ea-Ng\u00f4's Blog",
     "short_name": "Dang's Blog",
+    "start_url": "index.html",
     "icons": [
         {
             "src": "/android-chrome-36x36.png",
