@@ -8,10 +8,11 @@ import 'normalize.css';
 import 'raleway-webfont/raleway.css';
 import 'roboto-mono-webfont/roboto-mono.css';
 
-import getPosts from '../shared/assets/posts';
-import App from '../shared/components/App';
 import '../shared/assets/avatar.jpg';
 import '../shared/assets/images';
+import getPosts from '../shared/assets/posts';
+import '../shared/assets/reset.css';
+import App from '../shared/components/App';
 
 OfflinePluginRuntime.install();
 
