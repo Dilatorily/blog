@@ -56,18 +56,14 @@ const styles = {
   },
 };
 
-const HomePost = props => (
+const HomePost = ({ date, post }) => (
   <li className="home-post" style={styles.post}>
-    <Link style={styles.link} to={`/posts/${props.date}`}>
+    <Link style={styles.link} to={`/posts/${date}`}>
       <div style={styles.article}>
-        <h2 style={styles.title}>
-          {getContentFromFirstTag(props.post, 'h1')}
-        </h2>
-        <p style={styles.description}>{getContentFromFirstTag(props.post, 'p')}</p>
+        <h2 style={styles.title}>{getContentFromFirstTag(post, 'h1')}</h2>
+        <p style={styles.description}>{getContentFromFirstTag(post, 'p')}</p>
       </div>
-      <h3 style={styles.date}>
-        {format(new Date(props.date), 'MMMM Do, YYYY')}
-      </h3>
+      <h3 style={styles.date}>{format(new Date(date), 'MMMM Do, YYYY')}</h3>
     </Link>
     <Style scopeSelector=".home-post" rules={styles.homePost} />
   </li>
