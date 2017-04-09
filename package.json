@@ -57,7 +57,7 @@
     "jest": "19.0.2",
     "prop-types": "15.5.4",
     "raw-loader": "0.5.1",
-    "react-addons-test-utils": "15.5.0",
+    "react-addons-test-utils": "15.5.1",
     "remarkable-loader": "0.2.1",
     "rimraf": "2.6.1",
     "spdy": "3.4.4",
