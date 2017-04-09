@@ -108,8 +108,12 @@ const App = ({ posts }) => (
   </div>
 );
 
-App.propTypes = {
-  posts: React.PropTypes.objectOf(React.PropTypes.string).isRequired,
-};
+if (__DEV__) {
+  import('prop-types').then((PropTypes) => {
+    App.propTypes = {
+      posts: PropTypes.objectOf(PropTypes.string).isRequired,
+    };
+  });
+}
 
 export default Radium(App);

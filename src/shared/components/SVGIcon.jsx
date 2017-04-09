@@ -6,10 +6,14 @@ const SVGIcon = ({ path, size }) => (
   </svg>
 );
 
-SVGIcon.propTypes = {
-  path: React.PropTypes.string.isRequired,
-  size: React.PropTypes.number,
-};
+if (__DEV__) {
+  import('prop-types').then((PropTypes) => {
+    SVGIcon.propTypes = {
+      path: PropTypes.string.isRequired,
+      size: PropTypes.number,
+    };
+  });
+}
 
 SVGIcon.defaultProps = {
   size: 20,

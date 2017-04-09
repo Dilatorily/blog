@@ -69,9 +69,13 @@ const HomePost = ({ date, post }) => (
   </li>
 );
 
-HomePost.propTypes = {
-  post: React.PropTypes.string.isRequired,
-  date: React.PropTypes.string.isRequired,
-};
+if (__DEV__) {
+  import('prop-types').then((PropTypes) => {
+    HomePost.propTypes = {
+      post: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+    };
+  });
+}
 
 export default HomePost;

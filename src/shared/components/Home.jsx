@@ -29,8 +29,12 @@ const Home = ({ posts }) => (
   </ul>
 );
 
-Home.propTypes = {
-  posts: React.PropTypes.objectOf(React.PropTypes.string).isRequired,
-};
+if (__DEV__) {
+  import('prop-types').then((PropTypes) => {
+    Home.propTypes = {
+      posts: PropTypes.objectOf(PropTypes.string).isRequired,
+    };
+  });
+}
 
 export default Home;

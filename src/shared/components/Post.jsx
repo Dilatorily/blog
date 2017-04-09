@@ -161,13 +161,17 @@ const Post = ({ match: { params: { date } }, posts }) => {
   );
 };
 
-Post.propTypes = {
-  match: React.PropTypes.shape({
-    params: React.PropTypes.shape({
-      date: React.PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired,
-  posts: React.PropTypes.objectOf(React.PropTypes.string).isRequired,
-};
+if (__DEV__) {
+  import('prop-types').then((PropTypes) => {
+    Post.propTypes = {
+      match: PropTypes.shape({
+        params: PropTypes.shape({
+          date: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+      posts: PropTypes.objectOf(PropTypes.string).isRequired,
+    };
+  });
+}
 
 export default Post;
