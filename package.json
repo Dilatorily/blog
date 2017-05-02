@@ -15,7 +15,7 @@
   "dependencies": {
     "babel-polyfill": "6.23.0",
     "date-fns": "1.28.4",
-    "normalize.css": "6.0.0",
+    "normalize.css": "7.0.0",
     "offline-plugin": "4.7.0",
     "radium": "0.18.2",
     "raleway-webfont": "3.0.1",
