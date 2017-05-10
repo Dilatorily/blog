@@ -27,7 +27,6 @@ const entry = isDevelopment ? devEntry.concat(baseEntry) : baseEntry;
 
 const basePlugins = [
   new webpack.EnvironmentPlugin(['NODE_ENV']),
-  new webpack.DefinePlugin({ __DEV__: isDevelopment }),
   new CopyWebpackPlugin([{ from: 'src/shared/assets/favicon' }]),
   new HtmlWebpackPlugin({
     filename: isDevelopment ? 'index.html' : '../build/index.html',
