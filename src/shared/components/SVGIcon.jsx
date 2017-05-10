@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'; // eslint-disable-line import/no-extraneous-dependencies
 
 const SVGIcon = ({ path, size }) => (
   <svg height={size} width={size} viewBox="0 0 1792 1792">
@@ -6,14 +7,10 @@ const SVGIcon = ({ path, size }) => (
   </svg>
 );
 
-if (__DEV__) {
-  import('prop-types').then((PropTypes) => {
-    SVGIcon.propTypes = {
-      path: PropTypes.string.isRequired,
-      size: PropTypes.number,
-    };
-  });
-}
+SVGIcon.propTypes = {
+  path: PropTypes.string.isRequired,
+  size: PropTypes.number,
+};
 
 SVGIcon.defaultProps = {
   size: 20,

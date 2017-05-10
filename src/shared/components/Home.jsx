@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'; // eslint-disable-line import/no-extraneous-dependencies
 import isAfter from 'date-fns/is_after';
 
 import HomePost from './HomePost';
@@ -29,12 +30,8 @@ const Home = ({ posts }) => (
   </ul>
 );
 
-if (__DEV__) {
-  import('prop-types').then((PropTypes) => {
-    Home.propTypes = {
-      posts: PropTypes.objectOf(PropTypes.string).isRequired,
-    };
-  });
-}
+Home.propTypes = {
+  posts: PropTypes.objectOf(PropTypes.string).isRequired,
+};
 
 export default Home;
