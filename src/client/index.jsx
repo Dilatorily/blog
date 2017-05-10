@@ -10,7 +10,6 @@ import 'roboto-mono-webfont/roboto-mono.css';
 import '../shared/assets/avatar.jpg';
 import '../shared/assets/images';
 import getPosts from '../shared/assets/posts';
-import '../shared/assets/reset.css';
 import App from '../shared/components/App';
 
 (async () => {
