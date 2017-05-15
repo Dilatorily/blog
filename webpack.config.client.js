@@ -9,7 +9,15 @@ const WebpackDashboardPlugin = require('webpack-dashboard/plugin');
 
 const { isDevelopment, port } = require('./configuration');
 
-const baseEntry = ['babel-polyfill', './src/client/index.jsx'];
+const baseEntry = [
+  'babel-polyfill',
+  'normalize.css',
+  'raleway-webfont/raleway.css',
+  'roboto-mono-webfont/roboto-mono.css',
+  './src/shared/assets/avatar.jpg',
+  './src/shared/assets/images',
+  './src/client/index.jsx',
+];
 const devEntry = [
   'react-hot-loader/patch',
   `webpack-dev-server/client?http://localhost:${port}`,
@@ -19,7 +27,6 @@ const entry = isDevelopment ? devEntry.concat(baseEntry) : baseEntry;
 
 const basePlugins = [
   new webpack.EnvironmentPlugin(['NODE_ENV']),
-  new webpack.DefinePlugin({ __DEV__: isDevelopment }),
   new CopyWebpackPlugin([{ from: 'src/shared/assets/favicon' }]),
   new HtmlWebpackPlugin({
     filename: isDevelopment ? 'index.html' : '../build/index.html',

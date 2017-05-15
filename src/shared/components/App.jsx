@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'; // eslint-disable-line import/no-extraneous-dependencies
 import Radium, { Style } from 'radium';
 import { Link, Redirect, Route, Switch } from 'react-router-dom';
 
@@ -108,12 +109,8 @@ const App = ({ posts }) => (
   </div>
 );
 
-if (__DEV__) {
-  import('prop-types').then((PropTypes) => {
-    App.propTypes = {
-      posts: PropTypes.objectOf(PropTypes.string).isRequired,
-    };
-  });
-}
+App.propTypes = {
+  posts: PropTypes.objectOf(PropTypes.string).isRequired,
+};
 
 export default Radium(App);

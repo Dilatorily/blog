@@ -8,7 +8,6 @@ const entry = ['babel-polyfill', './src/server/index.jsx'];
 
 const basePlugins = [
   new webpack.EnvironmentPlugin(['NODE_ENV']),
-  new webpack.DefinePlugin({ __DEV__: isDevelopment }),
   new webpack.IgnorePlugin(/node_modules/),
 ];
 const prodPlugins = [

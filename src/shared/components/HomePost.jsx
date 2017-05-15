@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'; // eslint-disable-line import/no-extraneous-dependencies
 import { Style } from 'radium';
 import { Link } from 'react-router-dom';
 import format from 'date-fns/format';
@@ -69,13 +70,9 @@ const HomePost = ({ date, post }) => (
   </li>
 );
 
-if (__DEV__) {
-  import('prop-types').then((PropTypes) => {
-    HomePost.propTypes = {
-      post: PropTypes.string.isRequired,
-      date: PropTypes.string.isRequired,
-    };
-  });
-}
+HomePost.propTypes = {
+  post: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+};
 
 export default HomePost;

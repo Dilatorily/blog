@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'; // eslint-disable-line import/no-extraneous-dependencies
 import { Redirect } from 'react-router-dom';
 import { Style } from 'radium';
 import format from 'date-fns/format';
@@ -161,17 +162,13 @@ const Post = ({ match: { params: { date } }, posts }) => {
   );
 };
 
-if (__DEV__) {
-  import('prop-types').then((PropTypes) => {
-    Post.propTypes = {
-      match: PropTypes.shape({
-        params: PropTypes.shape({
-          date: PropTypes.string.isRequired,
-        }).isRequired,
-      }).isRequired,
-      posts: PropTypes.objectOf(PropTypes.string).isRequired,
-    };
-  });
-}
+Post.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      date: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+  posts: PropTypes.objectOf(PropTypes.string).isRequired,
+};
 
 export default Post;
