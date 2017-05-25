@@ -39,7 +39,7 @@
     "compression": "1.6.2",
     "copy-webpack-plugin": "4.0.1",
     "create-react-class": "15.5.3",
-    "css-loader": "0.28.1",
+    "css-loader": "0.28.3",
     "enzyme": "2.8.2",
     "eslint": "3.19.0",
     "eslint-config-airbnb": "15.0.1",
