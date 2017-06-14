@@ -38,7 +38,7 @@
     "babel-register": "6.24.1",
     "compression": "1.6.2",
     "copy-webpack-plugin": "4.0.1",
-    "create-react-class": "15.5.3",
+    "create-react-class": "15.6.0",
     "css-loader": "0.28.4",
     "enzyme": "2.8.2",
     "eslint": "3.19.0",
