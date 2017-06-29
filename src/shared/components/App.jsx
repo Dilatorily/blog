@@ -89,7 +89,7 @@ const App = ({ posts }) => (
         <Link to="/"><img key="avatar" alt="avatar" src="/assets/avatar.jpg" className="avatar" style={styles.avatar} /></Link>
         <div style={styles.headerTextContainer}>
           <div style={styles.name}>Huy Dang Lê-Ngô</div>
-          <div>Software Engineer <a title="Interset" href="https://www.interset.com" className="link" style={styles.link}>@Interset</a></div>
+          <div>Software Engineer <a title="Amazon" href="https://www.amazon.com" className="link" style={styles.link}>@Amazon</a></div>
           <div>
             <a key="linkedin" title="LinkedIn" href="https://www.linkedin.com/in/dilatorily" className="link" style={[styles.link, styles.icon]}><SVGIcon path={linkedin} /></a>
             <a key="github" title="GitHub" href="https://github.com/Dilatorily" className="link" style={[styles.link, styles.icon]}><SVGIcon path={github} /></a>
