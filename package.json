@@ -22,7 +22,7 @@
     "react": "15.6.1",
     "react-dom": "15.6.1",
     "react-hot-loader": "3.0.0-beta.6",
-    "react-router-dom": "4.1.1",
+    "react-router-dom": "4.1.2",
     "roboto-mono-webfont": "2.0.986",
     "xmldom": "0.1.27"
   },
