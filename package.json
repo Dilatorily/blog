@@ -13,7 +13,7 @@
     "restart": "NODE_ENV=production forever restartall"
   },
   "dependencies": {
-    "babel-polyfill": "6.23.0",
+    "babel-polyfill": "6.26.0",
     "date-fns": "1.28.5",
     "normalize.css": "7.0.0",
     "offline-plugin": "4.8.3",
