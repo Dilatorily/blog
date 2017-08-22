@@ -48,6 +48,11 @@ const prodPlugins = [
   new OfflinePlugin({
     publicPath: '/',
     relativePaths: false,
+    ServiceWorker: {
+      events: true,
+      navigateFallbackURL: '/',
+      minify: true,
+    },
     AppCache: false,
   }),
 ];
