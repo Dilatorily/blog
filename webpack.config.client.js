@@ -48,11 +48,11 @@ const prodPlugins = [
   new OfflinePlugin({
     publicPath: '/',
     relativePaths: false,
-    ServiceWorker: {
-      events: true,
-      navigateFallbackURL: '/',
-      minify: true,
+    caches: {
+      main: [':rest:'],
+      additional: ['*.chunk.js'],
     },
+    safeToUseOptionalCaches: true,
     AppCache: false,
   }),
 ];
@@ -63,7 +63,8 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'public'),
     publicPath: '/',
-    filename: '[name].[hash].js',
+    filename: '[name].[chunkhash].js',
+    chunkFilename: '[name].[chunkhash].chunk.js',
   },
   devtool: isDevelopment ? 'eval-source-map' : false,
   resolve: { extensions: ['.js', '.jsx'] },
