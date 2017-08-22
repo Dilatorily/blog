@@ -51,7 +51,6 @@ const prodPlugins = [
     caches: {
       main: [':rest:'],
       additional: [':externals'],
-      optional: ['*.chunk.js'],
     },
     AppCache: false,
   }),
