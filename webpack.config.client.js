@@ -47,12 +47,12 @@ const prodPlugins = [
   new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
   new OfflinePlugin({
     publicPath: '/',
-    relativePaths: true,
+    relativePaths: false,
     caches: {
       main: [':rest:'],
-      additional: ['*.chunk.js'],
+      additional: [':externals'],
+      optional: ['*.chunk.js'],
     },
-    safeToUseOptionalCaches: true,
     AppCache: false,
   }),
 ];
