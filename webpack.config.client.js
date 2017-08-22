@@ -29,7 +29,7 @@ const basePlugins = [
   new webpack.EnvironmentPlugin(['NODE_ENV']),
   new CopyWebpackPlugin([{ from: 'src/shared/assets/favicon' }]),
   new HtmlWebpackPlugin({
-    filename: isDevelopment ? 'index.html' : '../build/index.html',
+    filename: 'index.html',
     template: 'src/shared/index.html',
     inject: 'body',
     minify: { collapseWhitespace: true },
@@ -47,12 +47,7 @@ const prodPlugins = [
   new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
   new OfflinePlugin({
     publicPath: '/',
-    externals: ['/'],
     relativePaths: false,
-    caches: {
-      main: [':rest:'],
-      additional: [':externals'],
-    },
     AppCache: false,
   }),
 ];
@@ -63,8 +58,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'public'),
     publicPath: '/',
-    filename: '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].chunk.js',
+    filename: '[name].[hash].js',
   },
   devtool: isDevelopment ? 'eval-source-map' : false,
   resolve: { extensions: ['.js', '.jsx'] },
