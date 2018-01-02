@@ -43,16 +43,15 @@ const httpsApp = spdy.createServer({ key, cert }, secureApp);
     includeSubdomains: true,
     force: true,
   }));
-  secureApp.use(express.static('public', { maxAge: cacheMaxAge }));
+  secureApp.use(express.static('public', { index: false, maxAge: cacheMaxAge }));
   secureApp.use((request, response) => {
     const context = {};
-    const root = renderToStaticMarkup(
+    const root = renderToStaticMarkup((
       <StyleRoot radiumConfig={{ userAgent: request.headers['user-agent'] }}>
         <StaticRouter location={request.url} context={context}>
           <App posts={posts} />
         </StaticRouter>
-      </StyleRoot>,
-    );
+      </StyleRoot>));
 
     if (context.url) {
       response.redirect(301, context.url);
