@@ -4,15 +4,5 @@
   "env": {
     "browser": true,
     "jest": true
-  },
-  "globals": {
-    "__DEV__": false
-  },
-  "rules": {
-    "jsx-a11y/anchor-is-valid": ["error", {
-    components: ["Link"],
-    specialLink: ["to"],
-    aspects: ["noHref", "invalidHref", "preferButton"]
-    }]
   }
 }

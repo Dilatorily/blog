@@ -1,3 +1,4 @@
+import isBefore from 'date-fns/is_before';
 import { DOMParser } from 'xmldom';
 
 export const getContentFromFirstTag = (post, tag) => {
@@ -9,4 +10,4 @@ export const getContentFromFirstTag = (post, tag) => {
   return tags.getElementsByTagName(tag)[0] ? tags.getElementsByTagName(tag)[0].textContent : null;
 };
 
-export default { getContentFromFirstTag };
+export const compareDate = (a, b) => (isBefore(new Date(a), new Date(b)) ? -1 : 1);

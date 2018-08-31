@@ -1,20 +1,27 @@
 import fs from 'fs';
 import path from 'path';
-import winston from 'winston'; // eslint-disable-line import/no-extraneous-dependencies
-import express from 'express'; // eslint-disable-line import/no-extraneous-dependencies
-import compression from 'compression'; // eslint-disable-line import/no-extraneous-dependencies
-import helmet from 'helmet'; // eslint-disable-line import/no-extraneous-dependencies
-import spdy from 'spdy'; // eslint-disable-line import/no-extraneous-dependencies
+import winston from 'winston';
+import express from 'express';
+import compression from 'compression';
+import helmet from 'helmet';
+import spdy from 'spdy';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
+import { renderStylesToString } from 'emotion-server';
 import { StaticRouter } from 'react-router-dom';
-import { StyleRoot } from 'radium';
 
 import getPosts from '../shared/assets/posts';
 import App from '../shared/components/App';
-import { httpsMaxAge, cacheMaxAge, port, httpsPort, pems } from '../../configuration';
+import {
+  cacheMaxAge,
+  httpsPort,
+  httpsMaxAge,
+  pems,
+  port,
+} from '../../configuration';
 
-winston.cli();
+winston.add(new winston.transports.Console());
+winston.format.cli();
 const listen = portToListen => (error) => {
   if (error) {
     winston.error(error);
@@ -46,12 +53,11 @@ const httpsApp = spdy.createServer({ key, cert }, secureApp);
   secureApp.use(express.static('public', { index: false, maxAge: cacheMaxAge }));
   secureApp.use((request, response) => {
     const context = {};
-    const root = renderToStaticMarkup((
-      <StyleRoot radiumConfig={{ userAgent: request.headers['user-agent'] }}>
-        <StaticRouter location={request.url} context={context}>
-          <App posts={posts} />
-        </StaticRouter>
-      </StyleRoot>));
+    const root = renderStylesToString(renderToStaticMarkup((
+      <StaticRouter location={request.url} context={context}>
+        <App posts={posts} />
+      </StaticRouter>
+    )));
 
     if (context.url) {
       response.redirect(301, context.url);

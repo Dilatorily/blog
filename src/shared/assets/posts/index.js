@@ -6,8 +6,8 @@ const dates = [
 
 export default async () => {
   const files = await Promise.all(dates.map(date => import(`./${date}.md`)));
-  return files.reduce((posts, file, index) => {
-    const date = dates[index];
-    return { ...posts, [date]: file };
-  }, {});
+  return files.reduce((posts, { default: file }, index) => ({
+    ...posts,
+    [dates[index]]: file,
+  }), {});
 };
