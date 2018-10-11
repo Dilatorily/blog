@@ -62,7 +62,7 @@
     "roboto-mono-webfont": "2.0.986",
     "spdy": "3.4.7",
     "style-loader": "0.23.1",
-    "url-loader": "1.1.1",
+    "url-loader": "1.1.2",
     "webpack": "4.20.2",
     "webpack-cli": "3.1.2",
     "webpack-dashboard": "2.0.0",
