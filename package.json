@@ -60,7 +60,7 @@
     "react-router-dom": "4.3.1",
     "rimraf": "2.6.2",
     "roboto-mono-webfont": "2.0.986",
-    "spdy": "3.4.7",
+    "spdy": "4.0.0",
     "style-loader": "0.23.1",
     "url-loader": "1.1.2",
     "webpack": "4.25.1",
