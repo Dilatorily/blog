@@ -48,7 +48,7 @@
     "image-webpack-loader": "4.5.0",
     "jest": "23.6.0",
     "markdown-loader": "4.0.0",
-    "normalize.css": "8.0.0",
+    "normalize.css": "8.0.1",
     "offline-plugin": "5.0.5",
     "prop-types": "15.6.2",
     "raleway-webfont": "3.0.1",
