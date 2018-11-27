@@ -55,7 +55,7 @@
     "raw-loader": "0.5.1",
     "react": "16.6.3",
     "react-dom": "16.6.3",
-    "react-emotion": "9.2.12",
+    "react-emotion": "10.0.0",
     "react-hot-loader": "4.3.12",
     "react-router-dom": "4.3.1",
     "rimraf": "2.6.2",
