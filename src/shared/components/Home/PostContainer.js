@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import Timestamp from './Timestamp';
 import Title from './Title';
 import { LIGHT_BLUE, LIGHT_GREY, RED } from '../../constants/style';

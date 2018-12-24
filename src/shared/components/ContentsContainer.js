@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 const ContentsContainer = styled.div`
   margin: 0 auto 50px;

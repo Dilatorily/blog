@@ -7,7 +7,6 @@ import helmet from 'helmet';
 import spdy from 'spdy';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { renderStylesToString } from 'emotion-server';
 import { StaticRouter } from 'react-router-dom';
 
 import getPosts from '../shared/assets/posts';
@@ -53,11 +52,11 @@ const httpsApp = spdy.createServer({ key, cert }, secureApp);
   secureApp.use(express.static('public', { index: false, maxAge: cacheMaxAge }));
   secureApp.use((request, response) => {
     const context = {};
-    const root = renderStylesToString(renderToStaticMarkup((
+    const root = renderToStaticMarkup((
       <StaticRouter location={request.url} context={context}>
         <App posts={posts} />
       </StaticRouter>
-    )));
+    ));
 
     if (context.url) {
       response.redirect(301, context.url);
