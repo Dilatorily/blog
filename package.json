@@ -8,7 +8,7 @@
     "build": "NODE_ENV=production webpack",
     "test": "jest",
     "dev": "PORT=8080 NODE_ENV=development webpack-dashboard -- webpack-dev-server --config webpack.config.client.babel.js",
-    "start": "NODE_ENV=production forever start build",
+    "start": "NODE_ENV=production forever start --spinSleepTime 0 build",
     "stop": " NODE_ENV=production forever stopall",
     "restart": "NODE_ENV=production forever restartall"
   },
