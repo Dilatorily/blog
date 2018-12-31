@@ -5,6 +5,7 @@ import winston from 'winston';
 import Koa from 'koa';
 import koaCompress from 'koa-compress';
 import koaHelmet from 'koa-helmet';
+import koaOnerror from 'koa-onerror';
 import koaStatic from 'koa-static';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -44,6 +45,7 @@ const httpsApp = http2.createSecureServer({ key, cert }, secureApp.callback());
   app.use(ctx => ctx.redirect(`https://${ctx.host}${ctx.path}`));
   app.listen(port, listen(port));
 
+  koaOnerror(secureApp);
   secureApp.use(koaCompress({ threshold: 0 }));
   secureApp.use(koaHelmet.hsts({ maxAge: httpsMaxAge, includeSubdomains: true }));
   secureApp.use(koaStatic('public', { index: false, maxAge: cacheMaxAge }));
@@ -63,8 +65,6 @@ const httpsApp = http2.createSecureServer({ key, cert }, secureApp.callback());
       ctx.body = index.replace('<!-- root -->', root);
     }
   });
-
-  secureApp.on('error', error => winston.error(error));
 
   httpsApp.listen(httpsPort, listen(httpsPort));
 })();
