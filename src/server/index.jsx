@@ -64,5 +64,7 @@ const httpsApp = http2.createSecureServer({ key, cert }, secureApp.callback());
     }
   });
 
+  secureApp.on('error', error => winston.error(error));
+
   httpsApp.listen(httpsPort, listen(httpsPort));
 })();
