@@ -44,17 +44,6 @@ const httpsApp = http2.createSecureServer({ key, cert }, secureApp.callback());
   app.use(ctx => ctx.redirect(`https://${ctx.host}${ctx.path}`));
   app.listen(port, listen(port));
 
-  secureApp.use(async (ctx, next) => {
-    try {
-      await next();
-    } catch (error) {
-      ctx.status = error.status || 500;
-      ctx.body = error.message;
-      ctx.app.emit('error', error, ctx);
-    }
-  });
-  secureApp.on('error', error => winston.error(error));
-
   secureApp.use(koaCompress({ threshold: 0 }));
   secureApp.use(koaHelmet.hsts({ maxAge: httpsMaxAge, includeSubdomains: true }));
   secureApp.use(koaStatic('public', { index: false, maxAge: cacheMaxAge }));
@@ -76,4 +65,5 @@ const httpsApp = http2.createSecureServer({ key, cert }, secureApp.callback());
   });
 
   httpsApp.listen(httpsPort, listen(httpsPort));
+  httpsApp.on('error', error => winston.error(error));
 })();
