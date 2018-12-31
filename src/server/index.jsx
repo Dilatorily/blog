@@ -45,11 +45,7 @@ const httpsApp = http2.createSecureServer({ key, cert }, secureApp.callback());
   app.listen(port, listen(port));
 
   secureApp.use(koaCompress({ threshold: 0 }));
-  secureApp.use(koaHelmet.hsts({
-    maxAge: httpsMaxAge,
-    includeSubdomains: true,
-    force: true,
-  }));
+  secureApp.use(koaHelmet.hsts({ maxAge: httpsMaxAge, includeSubdomains: true }));
   secureApp.use(koaStatic('public', { index: false, maxAge: cacheMaxAge }));
   secureApp.use((ctx) => {
     const context = {};
