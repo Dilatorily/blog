@@ -21,7 +21,7 @@ export default {
   },
   devtool: false,
   target: 'node',
-  node: { __dirname: true },
+  node: { __dirname: false },
   resolve: { extensions: ['.js', '.jsx'] },
   plugins,
   module: {

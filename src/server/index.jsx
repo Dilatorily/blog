@@ -5,7 +5,6 @@ import winston from 'winston';
 import Koa from 'koa';
 import koaCompress from 'koa-compress';
 import koaHelmet from 'koa-helmet';
-import koaOnerror from 'koa-onerror';
 import koaStatic from 'koa-static';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -31,7 +30,7 @@ const listen = portToListen => (error) => {
   }
 };
 
-const index = fs.readFileSync(path.resolve(__dirname, '..', '..', 'public', 'index.html')).toString();
+const index = fs.readFileSync(path.resolve(__dirname, '..', 'public', 'index.html')).toString();
 const key = fs.readFileSync(pems.key);
 const cert = fs.readFileSync(pems.cert);
 
@@ -45,7 +44,17 @@ const httpsApp = http2.createSecureServer({ key, cert }, secureApp.callback());
   app.use(ctx => ctx.redirect(`https://${ctx.host}${ctx.path}`));
   app.listen(port, listen(port));
 
-  koaOnerror(secureApp);
+  app.use(async (ctx, next) => {
+    try {
+      await next();
+    } catch (error) {
+      ctx.status = error.status || 500;
+      ctx.body = error.message;
+      ctx.app.emit('error', error, ctx);
+    }
+  });
+  app.on('error', error => winston.error(error));
+
   secureApp.use(koaCompress({ threshold: 0 }));
   secureApp.use(koaHelmet.hsts({ maxAge: httpsMaxAge, includeSubdomains: true }));
   secureApp.use(koaStatic('public', { index: false, maxAge: cacheMaxAge }));
