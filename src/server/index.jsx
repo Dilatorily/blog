@@ -31,7 +31,7 @@ const listen = portToListen => (error) => {
   }
 };
 
-const index = fs.readFileSync(path.resolve(__dirname, '..', 'public', 'index.html')).toString();
+const index = fs.readFileSync(path.resolve(__dirname, '..', '..', 'public', 'index.html')).toString();
 const key = fs.readFileSync(pems.key);
 const cert = fs.readFileSync(pems.cert);
 
