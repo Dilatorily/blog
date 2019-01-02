@@ -54,7 +54,7 @@
     "react-dom": "16.7.0",
     "react-hot-loader": "4.6.3",
     "react-router-dom": "4.3.1",
-    "rimraf": "2.6.2",
+    "rimraf": "2.6.3",
     "roboto-mono-webfont": "2.0.986",
     "style-loader": "0.23.1",
     "uglifyjs-webpack-plugin": "2.1.1",
