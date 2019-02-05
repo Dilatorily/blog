@@ -60,7 +60,7 @@
     "uglifyjs-webpack-plugin": "2.1.1",
     "url-loader": "1.1.2",
     "webpack": "4.29.0",
-    "webpack-cli": "3.2.0",
+    "webpack-cli": "3.2.2",
     "webpack-dashboard": "2.1.0",
     "webpack-dev-server": "3.1.14",
     "winston": "3.2.1",
