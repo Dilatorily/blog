@@ -51,7 +51,7 @@
     "raleway-webfont": "3.0.1",
     "raw-loader": "1.0.0",
     "react": "16.8.3",
-    "react-dom": "16.8.2",
+    "react-dom": "16.8.3",
     "react-hot-loader": "4.7.1",
     "react-router-dom": "4.3.1",
     "rimraf": "2.6.3",
