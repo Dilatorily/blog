@@ -16,7 +16,7 @@
     "@babel/polyfill": "7.4.0",
     "@babel/preset-env": "7.4.0",
     "@babel/preset-react": "7.0.0",
-    "@babel/register": "7.0.0",
+    "@babel/register": "7.4.0",
     "@emotion/core": "10.0.7",
     "@emotion/styled": "10.0.7",
     "babel-core": "7.0.0-bridge.0",
