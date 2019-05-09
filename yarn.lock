@@ -7789,9 +7789,10 @@ obuf@^1.0.0, obuf@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/obuf/-/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
 
-offline-plugin@5.0.6:
-  version "5.0.6"
-  resolved "https://registry.yarnpkg.com/offline-plugin/-/offline-plugin-5.0.6.tgz#7a7b244220cddb8a8cabecb172ec5c0be03e74b2"
+offline-plugin@5.0.7:
+  version "5.0.7"
+  resolved "https://registry.yarnpkg.com/offline-plugin/-/offline-plugin-5.0.7.tgz#26936ad1a7699f4d67e0a095a258972a4ccf1788"
+  integrity sha512-ArMFt4QFjK0wg8B5+R/6tt65u6Dk+Pkx4PAcW5O7mgIF3ywMepaQqFOQgfZD4ybanuGwuJihxUwMRgkzd+YGYw==
   dependencies:
     deep-extend "^0.5.1"
     ejs "^2.3.4"
@@ -10609,10 +10610,10 @@ webpack-cli@3.3.2:
     v8-compile-cache "^2.0.2"
     yargs "^12.0.5"
 
-webpack-dashboard@3.0.5:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/webpack-dashboard/-/webpack-dashboard-3.0.5.tgz#5b1dd2b736cbef5d1959821e7014e30bb35d22c3"
-  integrity sha512-u7jG+NHND08aDNj58UeJBsmaJGy0IptY4rR/pb/FPgX6JXBQpPnd71Ynj7dJYRrj01Fpvvn+eAJMKlN8xKL8uQ==
+webpack-dashboard@3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/webpack-dashboard/-/webpack-dashboard-3.0.6.tgz#d03101f36a1d3546e8b8a4d66483a8742154e89c"
+  integrity sha512-fyYEIqhk18BI1KCn9I01032dkcc5/PYcS1PBSVESTiFQtFsrVelPKPB4ZMbbPNeT2aU8uR1PUq5NY/oBUGOZ+w==
   dependencies:
     commander "^2.15.1"
     cross-spawn "^6.0.5"
