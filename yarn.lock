@@ -10610,10 +10610,10 @@ webpack-cli@3.3.2:
     v8-compile-cache "^2.0.2"
     yargs "^12.0.5"
 
-webpack-dashboard@3.0.5:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/webpack-dashboard/-/webpack-dashboard-3.0.5.tgz#5b1dd2b736cbef5d1959821e7014e30bb35d22c3"
-  integrity sha512-u7jG+NHND08aDNj58UeJBsmaJGy0IptY4rR/pb/FPgX6JXBQpPnd71Ynj7dJYRrj01Fpvvn+eAJMKlN8xKL8uQ==
+webpack-dashboard@3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/webpack-dashboard/-/webpack-dashboard-3.0.6.tgz#d03101f36a1d3546e8b8a4d66483a8742154e89c"
+  integrity sha512-fyYEIqhk18BI1KCn9I01032dkcc5/PYcS1PBSVESTiFQtFsrVelPKPB4ZMbbPNeT2aU8uR1PUq5NY/oBUGOZ+w==
   dependencies:
     commander "^2.15.1"
     cross-spawn "^6.0.5"
