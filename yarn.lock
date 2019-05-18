@@ -8625,10 +8625,10 @@ react-dom@16.8.6:
     prop-types "^15.6.2"
     scheduler "^0.13.6"
 
-react-hot-loader@4.8.4:
-  version "4.8.4"
-  resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.8.4.tgz#357ba342e367fd42d6a870a9c0601c23fa0730c6"
-  integrity sha512-O98btZXcm24ZgP+aPBD0W9N+GEnkOg6vlLEy/IMZ53u3K/dGqO0I/RU4qrmQzE+wMDLpwNo5TwxaAjVw9Y+IBA==
+react-hot-loader@4.8.6:
+  version "4.8.6"
+  resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.8.6.tgz#8352805be277de70d6da8657552d0fc55faa0014"
+  integrity sha512-OjQVJ91+Jt1lRfJh2Ig9DKs32U/MdUvbnKfC2Yns1MSMqgT+6aiPrBEoyCeItzMvobBHIAsoD4Q3a1JN6jII/g==
   dependencies:
     fast-levenshtein "^2.0.6"
     global "^4.3.0"
@@ -10616,10 +10616,10 @@ webpack-cli@3.3.2:
     v8-compile-cache "^2.0.2"
     yargs "^12.0.5"
 
-webpack-dashboard@3.0.6:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/webpack-dashboard/-/webpack-dashboard-3.0.6.tgz#d03101f36a1d3546e8b8a4d66483a8742154e89c"
-  integrity sha512-fyYEIqhk18BI1KCn9I01032dkcc5/PYcS1PBSVESTiFQtFsrVelPKPB4ZMbbPNeT2aU8uR1PUq5NY/oBUGOZ+w==
+webpack-dashboard@3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/webpack-dashboard/-/webpack-dashboard-3.0.7.tgz#bee819049d8c2f9017ebf7ea59b043b10db1a9ca"
+  integrity sha512-73qT3mtiUqRdWdQPjKSHbfzidEOO7XmnG5j8cZSzASsyoNTz7LbIvGTbodHpeCkZRV71r0YVQW+mqhQMCABJJw==
   dependencies:
     commander "^2.15.1"
     cross-spawn "^6.0.5"
