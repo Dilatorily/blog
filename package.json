@@ -24,7 +24,7 @@
     "babel-jest": "23.6.0",
     "babel-loader": "8.0.6",
     "babel-plugin-dynamic-import-node": "2.3.0",
-    "babel-plugin-emotion": "10.0.13",
+    "babel-plugin-emotion": "10.0.14",
     "copy-webpack-plugin": "5.0.3",
     "css-loader": "3.0.0",
     "date-fns": "1.30.1",
