@@ -62,7 +62,7 @@
     "webpack": "4.39.1",
     "webpack-cli": "3.3.6",
     "webpack-dashboard": "3.0.7",
-    "webpack-dev-server": "3.7.2",
+    "webpack-dev-server": "3.8.0",
     "winston": "3.2.1",
     "xmldom": "0.1.27"
   }
