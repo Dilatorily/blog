@@ -42,7 +42,7 @@
     "jest": "23.6.0",
     "koa": "2.7.0",
     "koa-compress": "3.0.0",
-    "koa-helmet": "4.2.0",
+    "koa-helmet": "4.2.1",
     "koa-static": "5.0.0",
     "markdown-loader": "5.1.0",
     "normalize.css": "8.0.1",
