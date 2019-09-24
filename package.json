@@ -53,7 +53,7 @@
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "react-hot-loader": "4.12.14",
-    "react-router-dom": "5.0.1",
+    "react-router-dom": "5.1.0",
     "rimraf": "3.0.0",
     "roboto-mono-webfont": "2.0.986",
     "style-loader": "1.0.0",
