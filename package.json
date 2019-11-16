@@ -52,7 +52,7 @@
     "raw-loader": "3.1.0",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "react-hot-loader": "4.12.17",
+    "react-hot-loader": "4.12.18",
     "react-router-dom": "5.1.2",
     "rimraf": "3.0.0",
     "roboto-mono-webfont": "2.0.986",
