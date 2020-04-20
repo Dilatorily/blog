@@ -23,7 +23,7 @@
     "babel-eslint": "10.0.3",
     "babel-jest": "23.6.0",
     "babel-loader": "8.0.6",
-    "babel-plugin-dynamic-import-node": "2.3.0",
+    "babel-plugin-dynamic-import-node": "2.3.1",
     "babel-plugin-emotion": "10.0.23",
     "copy-webpack-plugin": "5.1.1",
     "css-loader": "3.4.0",
