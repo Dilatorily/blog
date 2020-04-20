@@ -1813,7 +1813,14 @@ babel-messages@^6.23.0:
   dependencies:
     babel-runtime "^6.22.0"
 
-babel-plugin-dynamic-import-node@2.3.0, babel-plugin-dynamic-import-node@^2.3.0:
+babel-plugin-dynamic-import-node@2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/babel-plugin-dynamic-import-node/-/babel-plugin-dynamic-import-node-2.3.1.tgz#1dc493d0c23aed0a6207ae2c498511f7d32d6ebe"
+  integrity sha512-q9YOcbDnAiq5Rn+rM3EWZJ1kgDQxJdJwjJZbPxJYm9NdBJnL4Vs4BM/ofx5TwIUWSw8T9nBpn3RRjyTKMcM/pw==
+  dependencies:
+    object.assign "^4.1.0"
+
+babel-plugin-dynamic-import-node@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-dynamic-import-node/-/babel-plugin-dynamic-import-node-2.3.0.tgz#f00f507bdaa3c3e3ff6e7e5e98d90a7acab96f7f"
   integrity sha512-o6qFkpeQEBxcqt0XYlWzAVxNCSCZdUgcR8IRlhD/8DylxjjO4foPcvTW0GGKa/cVt3rvxZ7o5ippJ+/0nvLhlQ==
@@ -3099,10 +3106,10 @@ crypto-browserify@^3.11.0:
     randombytes "^2.0.0"
     randomfill "^1.0.3"
 
-css-loader@3.3.2:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-3.3.2.tgz#41b2086528aa4fbf8c0692e874bc14f081129b21"
-  integrity sha512-4XSiURS+YEK2fQhmSaM1onnUm0VKWNf6WWBYjkp9YbSDGCBTVZ5XOM6Gkxo8tLgQlzkZOBJvk9trHlDk4gjEYg==
+css-loader@3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-3.4.0.tgz#9fb263436783117a41d014e45e8eaeba54dd6670"
+  integrity sha512-JornYo4RAXl1Mzt0lOSVPmArzAMV3rGY2VuwtaDc732WTWjdwTaeS19nCGWMcSCf305Q396lhhDAJEWWM0SgPQ==
   dependencies:
     camelcase "^5.3.1"
     cssesc "^3.0.0"
