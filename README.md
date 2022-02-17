@@ -11,5 +11,8 @@ This repository contains the source code of my personal blog.
 - `npm run build`: Statically generate the pages into the `docs` directory.
 - `npm run clean`: Removes the `build` and the `docs` directories.
 - `npm run compile`: Bundles the static generator into the `build` directory.
+- `npm run lint`: Lint the source files in the `src` directory.
+- `npm run lint -- --fix`: Automatically fix the lint errors of the source files in the `src` directory.
 - `npm start`: Starts a server serving the `docs` directory at [http://0.0.0.0:8080](http://0.0.0.0:8080).
 - `npm test`: Runs the unit tests and generates the code coverage.
+- `npm run typings`: Type check the source files in the `src` directory.

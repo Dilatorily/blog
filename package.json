@@ -6,10 +6,12 @@
     "build": "esno build",
     "clean": "rimraf build docs",
     "compile": "NODE_ENV=production esno src/build/compile.ts",
+    "lint": "eslint \"src/**/*.@(j|t)s?(x)\"",
     "prebuild": "npm run compile",
     "precompile": "npm run clean",
     "start": "http-server docs",
-    "test": "jest"
+    "test": "jest",
+    "typings": "tsc"
   },
   "dependencies": {
     "@linaria/core": "3.0.0-beta.15",
