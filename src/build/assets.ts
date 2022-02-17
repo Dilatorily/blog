@@ -4,8 +4,8 @@ import { Path } from '../constants';
 import { createFolder, listFiles } from './utils';
 
 const createRootFiles = () => {
-  writeFileSync(join(Path.Documents, 'CNAME'), 'huy-dang.le-ngo.com', 'utf8');
   writeFileSync(join(Path.Documents, '.nojekyll'), '', 'utf8');
+  writeFileSync(join(Path.Documents, 'CNAME'), 'huy-dang.le-ngo.com', 'utf8');
 };
 
 const copyBuildFolder = () => {
