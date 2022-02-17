@@ -1,5 +1,6 @@
 # fictional-octo-spork
-[![Build Status](https://travis-ci.org/Dilatorily/fictional-octo-spork.svg?branch=master)](https://travis-ci.org/Dilatorily/fictional-octo-spork) [![codecov](https://codecov.io/gh/Dilatorily/fictional-octo-spork/branch/main/graph/badge.svg)](https://codecov.io/gh/Dilatorily/fictional-octo-spork)
+[![codecov](https://codecov.io/gh/Dilatorily/fictional-octo-spork/branch/main/graph/badge.svg)](https://codecov.io/gh/Dilatorily/fictional-octo-spork)
+
 This repository contains the source code of my personal blog.
 
 ## Development
