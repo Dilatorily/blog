@@ -1,5 +1,5 @@
-# fictional-octo-spork
-[![codecov](https://codecov.io/gh/Dilatorily/fictional-octo-spork/branch/main/graph/badge.svg)](https://codecov.io/gh/Dilatorily/fictional-octo-spork)
+# blog
+[![codecov](https://codecov.io/gh/Dilatorily/blog/branch/main/graph/badge.svg)](https://codecov.io/gh/Dilatorily/blog)
 
 This repository contains the source code of my personal blog.
 
