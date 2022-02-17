@@ -3,8 +3,9 @@ import { join, parse } from 'path';
 import { Path } from '../constants';
 import { createFolder, listFiles } from './utils';
 
-const createCName = () => {
+const createRootFiles = () => {
   writeFileSync(join(Path.Documents, 'CNAME'), 'huy-dang.le-ngo.com', 'utf8');
+  writeFileSync(join(Path.Documents, '.nojekyll'), '', 'utf8');
 };
 
 const copyBuildFolder = () => {
@@ -35,7 +36,7 @@ const copyAssets = () => {
 
 export default () => {
   createFolder(Path.Assets);
-  createCName();
+  createRootFiles();
   copyBuildFolder();
   copyAssets();
 };
