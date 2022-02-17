@@ -11,14 +11,14 @@ const copyBuildFolder = () => {
     })
     .forEach((file) => {
       const { base } = parse(file);
-      copyFileSync(file, join(Path.PublicAssets, base));
+      copyFileSync(file, join(Path.Assets, base));
     });
 };
 
 const listAssets = (): Record<string, string> =>
-  listFiles(Path.Assets).reduce((assets, file) => {
+  listFiles(Path.SourceAssets).reduce((assets, file) => {
     const { base } = parse(file);
-    const newPath = join(Path.PublicAssets, base);
+    const newPath = join(Path.Assets, base);
     return Object.assign(assets, { [newPath]: file });
   }, {});
 
@@ -30,7 +30,7 @@ const copyAssets = () => {
 };
 
 export default () => {
-  createFolder(Path.PublicAssets);
+  createFolder(Path.Assets);
   copyBuildFolder();
   copyAssets();
 };

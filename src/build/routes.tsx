@@ -43,7 +43,7 @@ const processFileByExtension: Record<
 export default () => {
   const routes = listRoutes();
   Object.entries(routes).forEach(async ([route, source]) => {
-    const destination = join(Path.Public, route);
+    const destination = join(Path.Documents, route);
     createFolderForFile(destination);
 
     const { ext } = parse(source);

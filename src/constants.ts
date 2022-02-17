@@ -21,12 +21,12 @@ export enum Extension {
 }
 
 export enum Path {
-  Assets = 'src/assets',
+  Assets = 'docs/assets',
+  Documents = 'docs',
   Build = 'build',
   Posts = 'src/routes/posts',
-  Public = 'public',
-  PublicAssets = 'public/assets',
   Routes = 'src/routes',
+  SourceAssets = 'src/assets',
 }
 
 export enum Tag {

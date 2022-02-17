@@ -17,5 +17,5 @@ const listPosts = (): Record<string, string> =>
 export default () => {
   const posts = listPosts();
   const html = generateHtml(<Home posts={posts} />);
-  writeFileSync(join(Path.Public, 'index.html'), html, 'utf8');
+  writeFileSync(join(Path.Documents, 'index.html'), html, 'utf8');
 };

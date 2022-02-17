@@ -26,7 +26,7 @@ export const generateHtml = (children: ReactNode) => {
 
   const stylesheet = `styles.${md5(other)}.css`;
   if (other) {
-    const stylesheetPath = join(Path.PublicAssets, stylesheet);
+    const stylesheetPath = join(Path.Assets, stylesheet);
     writeFileSync(stylesheetPath, other, 'utf8');
   }
 
