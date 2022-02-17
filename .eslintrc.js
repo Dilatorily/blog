@@ -5,6 +5,8 @@ module.exports = {
     'airbnb-typescript',
     'plugin:react-perf/recommended',
     'plugin:prettier/recommended',
+    'plugin:jest/recommended',
+    'plugin:jest/style',
   ],
   parserOptions: { project: './tsconfig.eslint.json' },
   plugins: ['sort-destructure-keys'],

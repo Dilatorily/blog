@@ -1,7 +1,11 @@
-import { copyFileSync } from 'fs';
+import { copyFileSync, writeFileSync } from 'fs';
 import { join, parse } from 'path';
 import { Path } from '../constants';
 import { createFolder, listFiles } from './utils';
+
+const createCName = () => {
+  writeFileSync(join(Path.Documents, 'CNAME'), 'huy-dang.le-ngo.com', 'utf8');
+};
 
 const copyBuildFolder = () => {
   listFiles(Path.Build)
@@ -31,6 +35,7 @@ const copyAssets = () => {
 
 export default () => {
   createFolder(Path.Assets);
+  createCName();
   copyBuildFolder();
   copyAssets();
 };

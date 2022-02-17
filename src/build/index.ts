@@ -9,3 +9,5 @@ const buildPublicFolder = () => {
 };
 
 buildPublicFolder();
+
+export default buildPublicFolder;

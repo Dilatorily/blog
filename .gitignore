@@ -1,5 +1,7 @@
 .*
 !.eslintrc.js
+!.github
 !.gitignore
 /build
+coverage
 node_modules

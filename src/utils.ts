@@ -1,5 +1,6 @@
 import { DOMParser } from '@xmldom/xmldom';
 import isBefore from 'date-fns/isBefore';
+import isEqual from 'date-fns/isEqual';
 import parseISO from 'date-fns/parseISO';
 import { Tag } from './constants';
 
@@ -14,4 +15,13 @@ export const getContentFromFirstTag = (post: string, tag: Tag) => {
     : '';
 };
 
-export const compareDate = (a: string, b: string) => (isBefore(parseISO(b), parseISO(a)) ? -1 : 1);
+export const compareDate = (a: string, b: string) => {
+  const date1 = parseISO(a);
+  const date2 = parseISO(b);
+
+  if (isEqual(date1, date2)) {
+    return 0;
+  }
+
+  return isBefore(date1, date2) ? 1 : -1;
+};

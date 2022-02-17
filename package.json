@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "build": "esno build",
-    "clean": "rimraf build public",
+    "clean": "rimraf build docs",
     "compile": "NODE_ENV=production esno src/build/compile.ts",
     "prebuild": "npm run compile",
     "precompile": "npm run clean",
-    "start": "http-server public",
+    "start": "http-server docs",
     "test": "jest"
   },
   "dependencies": {
@@ -30,10 +30,12 @@
     "roboto-mono-webfont": "2.0.986"
   },
   "devDependencies": {
+    "@babel/preset-env": "7.16.11",
     "@babel/preset-react": "7.16.7",
     "@babel/preset-typescript": "7.16.7",
     "@linaria/shaker": "3.0.0-beta.15",
     "@tsconfig/node16": "1.0.2",
+    "@types/jest": "27.4.0",
     "@types/lodash": "4.14.178",
     "@types/marked": "4.0.2",
     "@types/md5": "2.3.2",
@@ -46,6 +48,7 @@
     "eslint-config-airbnb-typescript": "16.1.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-import": "2.25.4",
+    "eslint-plugin-jest": "26.1.1",
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.28.0",
