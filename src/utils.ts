@@ -1,6 +1,6 @@
+import { DOMParser } from '@xmldom/xmldom';
 import isBefore from 'date-fns/isBefore';
 import parseISO from 'date-fns/parseISO';
-import { DOMParser } from 'xmldom';
 import { Tag } from './constants';
 
 export const getContentFromFirstTag = (post: string, tag: Tag) => {
