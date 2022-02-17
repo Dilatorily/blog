@@ -1,12 +1,5 @@
 .*
-!.babelrc
-!.editorconfig
-!.eslintrc
+!.eslintrc.js
 !.gitignore
-!.travis.yml
-*.log
-*.pem
-build
-coverage
+/build
 node_modules
-public
