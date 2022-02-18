@@ -2,6 +2,7 @@
 !.eslintrc.js
 !.github
 !.gitignore
+!.husky
 /build
 coverage
 node_modules

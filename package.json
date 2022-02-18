@@ -11,7 +11,8 @@
     "precompile": "npm run clean",
     "start": "http-server docs",
     "test": "jest",
-    "typings": "tsc"
+    "typings": "tsc",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@linaria/core": "3.0.0-beta.15",
@@ -59,7 +60,9 @@
     "eslint-plugin-sort-destructure-keys": "1.4.0",
     "esno": "0.14.1",
     "http-server": "14.1.0",
+    "husky": "7.0.4",
     "jest": "27.5.1",
+    "lint-staged": "12.3.4",
     "prettier": "2.5.1",
     "rimraf": "3.0.2",
     "typescript": "4.5.5"
