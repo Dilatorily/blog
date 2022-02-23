@@ -6,7 +6,7 @@ import React, { ReactNode } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import Html from '../components/Html';
 import Root from '../components/Root';
-import { Path } from '../constants';
+import { Encoding, Path } from '../constants';
 
 export const createFolder = (folder: string) => {
   if (!existsSync(folder)) {
@@ -21,13 +21,13 @@ export const createFolderForFile = (file: string) => {
 
 export const generateHtml = (children: ReactNode) => {
   const body = renderToStaticMarkup(<Root>{children}</Root>);
-  const css = readFileSync(join(Path.Build, 'index.css'), 'utf8');
+  const css = readFileSync(join(Path.Build, 'index.css'), Encoding['UTF-8']);
   const { critical, other } = collect(body, css);
 
   const stylesheet = `styles.${md5(other)}.css`;
   if (other) {
     const stylesheetPath = join(Path.Assets, stylesheet);
-    writeFileSync(stylesheetPath, other, 'utf8');
+    writeFileSync(stylesheetPath, other, Encoding['UTF-8']);
   }
 
   const html = renderToStaticMarkup(

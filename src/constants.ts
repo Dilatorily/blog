@@ -15,6 +15,10 @@ export enum Color {
   White = '#ffffff',
 }
 
+export enum Encoding {
+  'UTF-8' = 'utf8',
+}
+
 export enum Extension {
   HTML = '.html',
   Markdown = '.md',

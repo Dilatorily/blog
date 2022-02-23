@@ -8,7 +8,7 @@ jest.mock('./home', () => ({ __esModule: true, default: jest.fn() }));
 jest.mock('./routes', () => ({ __esModule: true, default: jest.fn() }));
 
 describe('buildPublicFolder', () => {
-  beforeEach(() => {
+  afterEach(() => {
     jest.clearAllMocks();
   });
 

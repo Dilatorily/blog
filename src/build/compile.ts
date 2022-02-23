@@ -3,9 +3,9 @@ import { build, Plugin } from 'esbuild';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-const compile = () => {
+const compile = async () => {
   try {
-    build({
+    await build({
       bundle: true,
       entryPoints: ['src/build/index.ts'],
       external: ['esbuild'],
@@ -22,7 +22,7 @@ const compile = () => {
       plugins: [linaria({ sourceMap: !isProduction }) as Plugin],
       publicPath: '/assets',
     });
-  } catch {
+  } catch (error) {
     process.exit(1);
   }
 };

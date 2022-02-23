@@ -4,7 +4,7 @@ import { noop } from 'lodash';
 import { marked } from 'marked';
 import React from 'react';
 import Post from '../components/Post';
-import { Extension, Path } from '../constants';
+import { Encoding, Extension, Path } from '../constants';
 import { createFolderForFile, generateHtml, listFiles } from './utils';
 
 const listRoutes = (): Record<string, string> =>
@@ -26,10 +26,10 @@ const processHtml = (source: string, destination: string) => {
 
 const processMarkdown = (source: string, destination: string) => {
   const { name } = parse(source);
-  const markdown = readFileSync(source, 'utf8');
+  const markdown = readFileSync(source, Encoding['UTF-8']);
   const content = marked.parse(markdown);
   const html = generateHtml(<Post date={name}>{content}</Post>);
-  writeFileSync(destination, html, 'utf8');
+  writeFileSync(destination, html, Encoding['UTF-8']);
 };
 
 const processFileByExtension: Record<

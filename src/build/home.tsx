@@ -3,13 +3,13 @@ import { join, parse } from 'path';
 import { marked } from 'marked';
 import React from 'react';
 import Home from '../components/Home';
-import { Path } from '../constants';
+import { Encoding, Path } from '../constants';
 import { generateHtml, listFiles } from './utils';
 
 const listPosts = (): Record<string, string> =>
   listFiles(Path.Posts).reduce((routes, file) => {
     const { name } = parse(file);
-    const markdown = readFileSync(file, 'utf8');
+    const markdown = readFileSync(file, Encoding['UTF-8']);
     const content = marked.parse(markdown);
     return Object.assign(routes, { [name]: content });
   }, {});
@@ -17,5 +17,5 @@ const listPosts = (): Record<string, string> =>
 export default () => {
   const posts = listPosts();
   const html = generateHtml(<Home posts={posts} />);
-  writeFileSync(join(Path.Documents, 'index.html'), html, 'utf8');
+  writeFileSync(join(Path.Documents, 'index.html'), html, Encoding['UTF-8']);
 };
