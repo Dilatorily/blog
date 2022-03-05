@@ -15,7 +15,7 @@ jest.mock('esbuild', () => ({
 }));
 
 describe('compile', () => {
-  afterAll(() => {
+  afterEach(() => {
     jest.clearAllMocks();
   });
 

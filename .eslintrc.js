@@ -18,6 +18,7 @@ module.exports = {
         groups: ['builtin', 'external', 'parent', 'sibling', 'index'],
       },
     ],
+    'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
     'react/jsx-sort-props': ['error', { ignoreCase: true }],
     'sort-destructure-keys/sort-destructure-keys': ['error', { caseSensitive: false }],
     'sort-imports': ['error', { ignoreCase: true, ignoreDeclarationSort: true }],

@@ -1,6 +1,6 @@
 import { copyFileSync, readFileSync, writeFileSync } from 'fs';
 import { join, parse, relative } from 'path';
-import { noop } from 'lodash';
+import noop from 'lodash/noop';
 import { marked } from 'marked';
 import React from 'react';
 import Post from '../components/Post';
