@@ -6,7 +6,7 @@ import Image from './Image';
 function Avatar() {
   return (
     <AvatarLink href="/">
-      <Image alt="avatar" src={avatar} />
+      <Image alt="Home" src={avatar} />
     </AvatarLink>
   );
 }

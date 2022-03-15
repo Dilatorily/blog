@@ -7,7 +7,12 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:jest/recommended',
     'plugin:jest/style',
-    'plugin:testing-library/react',
+  ],
+  overrides: [
+    {
+      extends: ['plugin:testing-library/react'],
+      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+    },
   ],
   parserOptions: { project: './tsconfig.eslint.json' },
   plugins: ['sort-destructure-keys'],
@@ -25,4 +30,5 @@ module.exports = {
     'sort-imports': ['error', { ignoreCase: true, ignoreDeclarationSort: true }],
     'sort-keys': ['error', 'asc', { caseSensitive: false, natural: true }],
   },
+  settings: { 'testing-library/custom-renders': 'off' },
 };

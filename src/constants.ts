@@ -24,6 +24,10 @@ export enum Extension {
   Markdown = '.md',
 }
 
+export enum Identifier {
+  Main = 'main',
+}
+
 export enum Path {
   Assets = 'docs/assets',
   Documents = 'docs',
