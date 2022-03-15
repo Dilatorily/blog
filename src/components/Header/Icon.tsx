@@ -3,14 +3,15 @@ import React, { memo } from 'react';
 interface IconProps {
   path: string;
   size?: number;
+  viewBox: string;
 }
 
-const defaultProps = { size: 20 };
+const defaultProps = { size: 18 };
 
-function Icon({ path, size = defaultProps.size }: IconProps) {
+function Icon({ path, size = defaultProps.size, viewBox }: IconProps) {
   return (
-    <svg height={size} viewBox="0 0 1792 1792" width={size}>
-      <path d={path} transform="scale(1,-1) translate(0,-1536)" />
+    <svg height={size} viewBox={viewBox} width={size}>
+      <path d={path} />
     </svg>
   );
 }

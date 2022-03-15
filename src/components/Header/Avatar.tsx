@@ -1,18 +1,13 @@
-import { styled } from '@linaria/react';
 import React, { memo } from 'react';
 import avatar from './Avatar.jpg';
+import AvatarLink from './AvatarLink';
 import Image from './Image';
-
-const Link = styled.a`
-  display: inline-block;
-  margin-right: 20px;
-`;
 
 function Avatar() {
   return (
-    <Link href="/">
+    <AvatarLink href="/">
       <Image alt="avatar" src={avatar} />
-    </Link>
+    </AvatarLink>
   );
 }
 

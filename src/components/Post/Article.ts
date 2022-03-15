@@ -37,11 +37,17 @@ const Article = styled.article`
     font-weight: 500;
     color: ${Color.Red};
     text-decoration: none;
-    transition: 0.25s ease-in-out;
-  }
+    transition: 0.25s ease-in-out, outline 0s, outline-offset 0s;
 
-  & a:hover {
-    color: ${Color.LightBlue};
+    &:focus,
+    &:hover {
+      color: ${Color.LightBlue};
+    }
+
+    &:focus {
+      outline: 2px solid ${Color.Red};
+      outline-offset: 1px;
+    }
   }
 
   & pre {

@@ -1,6 +1,8 @@
 import { styled } from '@linaria/react';
+import { Color } from '../../constants';
 
 const Timestamp = styled.h3`
+  color: ${Color.Red};
   display: inline-block;
   font-size: 16px;
   font-style: italic;
