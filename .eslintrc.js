@@ -7,6 +7,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:jest/recommended',
     'plugin:jest/style',
+    'plugin:testing-library/react',
   ],
   parserOptions: { project: './tsconfig.eslint.json' },
   plugins: ['sort-destructure-keys'],

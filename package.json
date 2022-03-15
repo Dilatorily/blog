@@ -9,10 +9,10 @@
     "lint": "eslint \"src/**/*.@(j|t)s?(x)\"",
     "prebuild": "npm run compile",
     "precompile": "npm run clean",
+    "prepare": "husky install",
     "start": "http-server docs",
     "test": "jest",
-    "typings": "tsc",
-    "prepare": "husky install"
+    "typings": "tsc"
   },
   "dependencies": {
     "@linaria/core": "3.0.0-beta.15",
@@ -37,6 +37,8 @@
     "@babel/preset-react": "7.16.7",
     "@babel/preset-typescript": "7.16.7",
     "@linaria/shaker": "3.0.0-beta.15",
+    "@testing-library/jest-dom": "5.16.2",
+    "@testing-library/react": "12.1.3",
     "@tsconfig/node16": "1.0.2",
     "@types/jest": "27.4.1",
     "@types/lodash": "4.14.180",
@@ -58,6 +60,7 @@
     "eslint-plugin-react-hooks": "4.3.0",
     "eslint-plugin-react-perf": "3.3.1",
     "eslint-plugin-sort-destructure-keys": "1.4.0",
+    "eslint-plugin-testing-library": "5.0.6",
     "esno": "0.14.1",
     "html-entities": "2.3.2",
     "http-server": "14.1.0",
