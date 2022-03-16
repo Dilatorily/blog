@@ -16,4 +16,14 @@ describe('Html component', () => {
   it('passes the children prop in the body tag', () => {
     expect(view).toEqual(expect.stringContaining(`<body>${body}</body>`));
   });
+
+  it('passes the stylesheet prop to the link tag', () => {
+    const stylesheet = '/assets/styles.css';
+    const html = renderToStaticMarkup(
+      <Html critical={criticalStyles} stylesheet={stylesheet}>
+        {body}
+      </Html>,
+    );
+    expect(html).toEqual(expect.stringContaining(`<link href="${stylesheet}" rel="stylesheet"/>`));
+  });
 });

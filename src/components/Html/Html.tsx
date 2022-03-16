@@ -4,12 +4,10 @@ import HtmlParser from '../HtmlParser';
 interface HtmlProps {
   children: string;
   critical: string;
-  style?: string;
+  stylesheet?: string;
 }
 
-const defaultProps = { style: '' };
-
-function Html({ children, critical, style = defaultProps.style }: HtmlProps) {
+function Html({ children, critical, stylesheet = '' }: HtmlProps) {
   const criticalStyle = useMemo(() => ({ __html: critical }), [critical]);
 
   return (
@@ -42,12 +40,10 @@ function Html({ children, critical, style = defaultProps.style }: HtmlProps) {
       </head>
       <body>
         <HtmlParser>{children}</HtmlParser>
-        {style && <link href={style} rel="stylesheet" />}
+        {stylesheet && <link href={stylesheet} rel="stylesheet" />}
       </body>
     </html>
   );
 }
-
-Html.defaultProps = defaultProps;
 
 export default memo(Html);

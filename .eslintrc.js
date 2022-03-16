@@ -26,6 +26,10 @@ module.exports = {
     ],
     'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
     'react/jsx-sort-props': ['error', { ignoreCase: true }],
+    'react/require-default-props': [
+      'error',
+      { forbidDefaultForRequired: true, ignoreFunctionalComponents: true },
+    ],
     'sort-destructure-keys/sort-destructure-keys': ['error', { caseSensitive: false }],
     'sort-imports': ['error', { ignoreCase: true, ignoreDeclarationSort: true }],
     'sort-keys': ['error', 'asc', { caseSensitive: false, natural: true }],

@@ -31,7 +31,7 @@ export const generateHtml = (children: ReactNode) => {
   }
 
   const html = renderToStaticMarkup(
-    <Html critical={critical} style={other ? `/assets/${stylesheet}` : undefined}>
+    <Html critical={critical} stylesheet={other ? `/assets/${stylesheet}` : undefined}>
       {body}
     </Html>,
   );
