@@ -16,7 +16,9 @@ function Html({ children, critical, stylesheet = '' }: HtmlProps) {
         <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
         <meta charSet="utf-8" />
         <meta content="width=device-width,initial-scale=1" name="viewport" />
+        <meta content="object-src 'none'; script-src 'none'" httpEquiv="Content-Security-Policy" />
         <meta content="#ff7e71" name="theme-color" />
+        <meta content="Huy Dang Lê-Ngô's Blog" name="description" />
         <title>Huy Dang Lê-Ngô&apos;s Blog</title>
         <link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
         <link href="/assets/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
@@ -33,6 +35,7 @@ function Html({ children, critical, stylesheet = '' }: HtmlProps) {
         <meta content="Huy Dang L&ecirc;-Ng&ocirc;'s Blog" name="application-name" />
         <meta content="#ff7e71" name="msapplication-TileColor" />
         <meta content="/assets/mstile-144x144.png" name="msapplication-TileImage" />
+        <link crossOrigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect" />
         <style
           dangerouslySetInnerHTML={criticalStyle} // eslint-disable-line react/no-danger
           type="text/css"
