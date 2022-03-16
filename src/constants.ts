@@ -1,3 +1,7 @@
+export enum Breakpoint {
+  Mobile = 25,
+}
+
 export enum Color {
   DarkBlue = '#3558ca',
   DarkerBlue = '#092274',

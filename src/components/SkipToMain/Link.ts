@@ -4,11 +4,11 @@ import { Color } from '../../constants';
 const Link = styled.a`
   background-color: ${Color.White};
   color: ${Color.Red};
-  left: 5px;
-  padding: 8px;
+  left: 5rem;
+  padding: 8rem;
   position: fixed;
   text-decoration: none;
-  top: 5px;
+  top: 5rem;
   transition: 0.25s ease-in-out, clip 0s, outline 0s, outline-offset 0s;
 
   &:not(:focus) {
@@ -21,8 +21,8 @@ const Link = styled.a`
   }
 
   &:focus {
-    outline: 2px solid ${Color.Red};
-    outline-offset: -4px;
+    outline: 2rem solid ${Color.Red};
+    outline-offset: -4rem;
   }
 `;
 

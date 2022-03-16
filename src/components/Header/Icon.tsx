@@ -8,7 +8,7 @@ interface IconProps {
 
 function Icon({ path, size = 18, viewBox }: IconProps) {
   return (
-    <svg height={size} viewBox={viewBox} width={size}>
+    <svg height={`${size}rem`} viewBox={viewBox} width={`${size}rem`}>
       <path d={path} />
     </svg>
   );

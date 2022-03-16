@@ -3,7 +3,7 @@ import { Color } from '../../constants';
 
 const Timestamp = styled.h3`
   color: ${Color.Red};
-  font-size: 16px;
+  font-size: 16rem;
   font-style: italic;
   font-weight: 400;
 `;

@@ -21,7 +21,7 @@ const Article = styled.article`
   }
 
   & p {
-    font-size: 18px;
+    font-size: 18rem;
   }
 
   & code {
@@ -45,21 +45,21 @@ const Article = styled.article`
     }
 
     &:focus {
-      outline: 2px solid ${Color.Red};
-      outline-offset: 1px;
+      outline: 2rem solid ${Color.Red};
+      outline-offset: 1rem;
     }
   }
 
   & pre {
-    padding: 15px;
+    padding: 15rem;
     overflow-x: auto;
     background-color: ${Color.LightGrey};
   }
 
   & blockquote {
     margin: 0;
-    padding: 5px 40px;
-    border-left: 3px solid ${Color.Red};
+    padding: 5rem 40rem;
+    border-left: 3rem solid ${Color.Red};
     background-color: ${Color.LightGrey};
   }
 
@@ -79,8 +79,8 @@ const Article = styled.article`
   }
 
   & table thead th {
-    padding: 5px 10px;
-    border-bottom: 3px solid ${Color.Red};
+    padding: 5rem 10rem;
+    border-bottom: 3rem solid ${Color.Red};
     text-align: left;
   }
 
@@ -89,15 +89,15 @@ const Article = styled.article`
   }
 
   & table tbody td {
-    padding: 5px 10px;
+    padding: 5rem 10rem;
   }
 
   & hr {
-    border-top: 3px dotted ${Color.Red};
+    border-top: 3rem dotted ${Color.Red};
     border-bottom: none;
     border-left: none;
     border-right: none;
-    margin: 30px 30%;
+    margin: 30rem 30%;
   }
 
   & .hljs-comment,

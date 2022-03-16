@@ -12,8 +12,8 @@ const Link = styled.a`
   }
 
   &:focus {
-    outline: 2px solid ${Color.White};
-    outline-offset: 1px;
+    outline: 2rem solid ${Color.White};
+    outline-offset: 1rem;
   }
 `;
 

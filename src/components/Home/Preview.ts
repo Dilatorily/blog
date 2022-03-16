@@ -1,7 +1,7 @@
 import { styled } from '@linaria/react';
 
 const Preview = styled.p`
-  font-size: 18px;
+  font-size: 18rem;
   font-weight: 200;
   margin: 0;
   overflow: hidden;

@@ -1,4 +1,5 @@
 import { styled } from '@linaria/react';
+import { Breakpoint } from '../../constants';
 import SocialMediaItem from './SocialMediaItem';
 
 const SocialMediaList = styled.ol`
@@ -8,7 +9,11 @@ const SocialMediaList = styled.ol`
   padding: 0;
 
   ${SocialMediaItem} + ${SocialMediaItem} {
-    margin-left: 4px;
+    margin-left: 4rem;
+  }
+
+  @media only screen and (max-width: ${Breakpoint.Mobile}em) {
+    justify-content: center;
   }
 `;
 
