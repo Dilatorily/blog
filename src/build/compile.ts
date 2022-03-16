@@ -7,6 +7,7 @@ const compile = async () => {
   try {
     await build({
       bundle: true,
+      define: { 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV) },
       entryPoints: ['src/build/index.ts'],
       external: ['esbuild'],
       loader: {

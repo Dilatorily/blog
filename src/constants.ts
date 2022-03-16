@@ -41,3 +41,7 @@ export enum Tag {
   Heading1 = 'h1',
   Paragraph = 'p',
 }
+
+export enum TestId {
+  HomeArticlePreview = 'home-article-preview',
+}
