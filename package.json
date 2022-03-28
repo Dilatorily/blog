@@ -22,7 +22,7 @@
     "@xmldom/xmldom": "0.8.1",
     "date-fns": "2.28.0",
     "esbuild": "0.14.27",
-    "html-react-parser": "1.4.8",
+    "html-react-parser": "1.4.9",
     "lodash": "4.17.21",
     "marked": "4.0.12",
     "md5": "2.3.0",
