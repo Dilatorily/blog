@@ -40,7 +40,7 @@ jest.mock('../components/Root', () => ({
 }));
 
 describe('utils', () => {
-  afterEach(() => {
+  beforeEach(() => {
     jest.clearAllMocks();
   });
 

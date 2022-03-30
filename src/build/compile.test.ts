@@ -15,7 +15,7 @@ jest.mock('esbuild', () => ({
 }));
 
 describe('compile', () => {
-  afterEach(() => {
+  beforeEach(() => {
     jest.clearAllMocks();
   });
 
@@ -23,6 +23,13 @@ describe('compile', () => {
     compile();
 
     expect(build).toHaveBeenCalled();
+  });
+
+  it('calls esbuild twice', async () => {
+    jest.mocked(build).mockResolvedValue({ errors: [], warnings: [] });
+    await compile();
+
+    expect(build).toHaveBeenCalledTimes(2);
   });
 
   it('builds with linaria', () => {

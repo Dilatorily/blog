@@ -16,7 +16,7 @@ jest.mock('./utils', () => ({
 }));
 
 describe('buildAssets', () => {
-  afterEach(() => {
+  beforeEach(() => {
     jest.clearAllMocks();
   });
 

@@ -21,6 +21,7 @@ export const createFolderForFile = (file: string) => {
 
 export const generateHtml = (children: ReactNode) => {
   const body = renderToStaticMarkup(<Root>{children}</Root>);
+  const serviceWorker = readFileSync(join(Path.Build, 'serviceWorker.js'), Encoding['UTF-8']);
   const css = readFileSync(join(Path.Build, 'index.css'), Encoding['UTF-8']);
   const { critical, other } = collect(body, css);
 
@@ -31,7 +32,11 @@ export const generateHtml = (children: ReactNode) => {
   }
 
   const html = renderToStaticMarkup(
-    <Html critical={critical} stylesheet={other ? `/assets/${stylesheet}` : undefined}>
+    <Html
+      critical={critical}
+      serviceWorker={serviceWorker}
+      stylesheet={other ? `/assets/${stylesheet}` : undefined}
+    >
       {body}
     </Html>,
   );

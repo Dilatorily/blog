@@ -17,6 +17,13 @@ const compile = async () => {
       plugins: [linaria({ sourceMap: !isProduction }) as Plugin],
       publicPath: '/assets',
     });
+
+    await build({
+      entryPoints: ['src/build/serviceWorker.ts'],
+      minify: isProduction,
+      outdir: 'build',
+      platform: 'browser',
+    });
   } catch (error) {
     process.exit(1);
   }

@@ -43,7 +43,7 @@ describe('buildHome', () => {
       ]);
   });
 
-  afterEach(() => {
+  beforeEach(() => {
     jest.clearAllMocks();
   });
 

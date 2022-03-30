@@ -2,12 +2,12 @@ import buildAssets from './assets';
 import buildHome from './home';
 import buildRoutes from './routes';
 
-const buildPublicFolder = () => {
+const buildDocsFolder = () => {
   buildAssets();
   buildHome();
   buildRoutes();
 };
 
-buildPublicFolder();
+buildDocsFolder();
 
-export default buildPublicFolder;
+export default buildDocsFolder;

@@ -1,13 +1,17 @@
+import { createHash } from 'crypto';
 import React, { memo, useMemo } from 'react';
 import HtmlParser from '../HtmlParser';
 
 interface HtmlProps {
   children: string;
   critical: string;
+  serviceWorker: string;
   stylesheet?: string;
 }
 
-function Html({ children, critical, stylesheet = '' }: HtmlProps) {
+function Html({ children, critical, serviceWorker, stylesheet = '' }: HtmlProps) {
+  const hash = createHash('sha256').update(serviceWorker).digest('base64');
+  const script = useMemo(() => ({ __html: serviceWorker }), [serviceWorker]);
   const criticalStyle = useMemo(() => ({ __html: critical }), [critical]);
 
   return (
@@ -16,7 +20,10 @@ function Html({ children, critical, stylesheet = '' }: HtmlProps) {
         <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
         <meta charSet="utf-8" />
         <meta content="width=device-width,initial-scale=1" name="viewport" />
-        <meta content="object-src 'none'; script-src 'none'" httpEquiv="Content-Security-Policy" />
+        <meta
+          content={`object-src 'none'; script-src 'sha256-${hash}'; worker-src 'self'`}
+          httpEquiv="Content-Security-Policy"
+        />
         <meta content="#ff7e71" name="theme-color" />
         <meta content="Huy Dang Lê-Ngô's Blog" name="description" />
         <title>Huy Dang Lê-Ngô&apos;s Blog</title>
@@ -43,6 +50,9 @@ function Html({ children, critical, stylesheet = '' }: HtmlProps) {
       </head>
       <body>
         <HtmlParser>{children}</HtmlParser>
+        <script
+          dangerouslySetInnerHTML={script} // eslint-disable-line react/no-danger
+        />
         {stylesheet && <link href={stylesheet} rel="stylesheet" />}
       </body>
     </html>

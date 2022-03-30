@@ -43,7 +43,7 @@ describe('buildRoutes', () => {
       .mockImplementation((children) => renderToStaticMarkup(<>{children}</>));
   });
 
-  afterEach(() => {
+  beforeEach(() => {
     jest.clearAllMocks();
   });
 
