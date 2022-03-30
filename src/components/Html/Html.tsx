@@ -21,7 +21,7 @@ function Html({ children, critical, serviceWorker, stylesheet = '' }: HtmlProps)
         <meta charSet="utf-8" />
         <meta content="width=device-width,initial-scale=1" name="viewport" />
         <meta
-          content={`object-src 'none'; script-src 'sha256-${hash}'; worker-src 'self'`}
+          content={`object-src 'none'; script-src 'sha256-${hash}' 'unsafe-inline'; worker-src 'self'`}
           httpEquiv="Content-Security-Policy"
         />
         <meta content="#ff7e71" name="theme-color" />

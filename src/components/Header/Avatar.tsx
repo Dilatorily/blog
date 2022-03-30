@@ -8,7 +8,7 @@ import Image from './Image';
 function Avatar() {
   return (
     <AvatarLink data-testid={testId(TestId.HeaderAvatar)} href="/">
-      <Image alt="Home" height="100rem" src={avatar} width="100rem" />
+      <Image alt="Home" src={avatar} />
     </AvatarLink>
   );
 }
