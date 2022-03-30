@@ -1,13 +1,15 @@
 import React, { memo } from 'react';
+import { TestId } from '../../constants';
+import { testId } from '../../utils';
+import InformationContainer from './InformationContainer';
 import Link from './Link';
 import Name from './Name';
 import SocialMedia from './SocialMedia';
-import TextContainer from './TextContainer';
 import Title from './Title';
 
-function Text() {
+function Information() {
   return (
-    <TextContainer>
+    <InformationContainer data-testid={testId(TestId.HeaderText)}>
       <Name>Huy Dang Lê-Ngô</Name>
       <Title>
         {'Senior Front-End Engineer '}
@@ -16,8 +18,8 @@ function Text() {
         </Link>
       </Title>
       <SocialMedia />
-    </TextContainer>
+    </InformationContainer>
   );
 }
 
-export default memo(Text);
+export default memo(Information);

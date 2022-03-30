@@ -47,5 +47,14 @@ export enum Tag {
 }
 
 export enum TestId {
+  Header = 'header',
+  HeaderAvatar = 'header-avatar',
+  HeaderGitHub = 'header-github',
+  HeaderIcon = 'header-icon',
+  HeaderIconPath = 'header-icon-path',
+  HeaderLinkedIn = 'header-linkedin',
+  HeaderSocialMedia = 'header-social-media',
+  HeaderText = 'header-text',
+  HeaderTwitter = 'header-twitter',
   HomeArticlePreview = 'home-article-preview',
 }

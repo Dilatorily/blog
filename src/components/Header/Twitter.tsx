@@ -1,4 +1,6 @@
 import React, { memo } from 'react';
+import { TestId } from '../../constants';
+import { testId } from '../../utils';
 import Icon from './Icon';
 import IconLink from './IconLink';
 import SocialMediaItem from './SocialMediaItem';
@@ -8,7 +10,7 @@ const path =
 
 function Twitter() {
   return (
-    <SocialMediaItem>
+    <SocialMediaItem data-testid={testId(TestId.HeaderTwitter)}>
       <IconLink href="https://twitter.com/Dagneau" title="Twitter">
         <Icon path={path} viewBox="0 0 512 512" />
       </IconLink>

@@ -1,13 +1,15 @@
 import React, { memo } from 'react';
+import { TestId } from '../../constants';
+import { testId } from '../../utils';
 import Avatar from './Avatar';
 import Container from './Container';
-import Text from './Text';
+import Information from './Information';
 
 function Header() {
   return (
-    <Container>
+    <Container data-testid={testId(TestId.Header)}>
       <Avatar />
-      <Text />
+      <Information />
     </Container>
   );
 }

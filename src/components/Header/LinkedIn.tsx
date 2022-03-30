@@ -1,4 +1,6 @@
 import React, { memo } from 'react';
+import { TestId } from '../../constants';
+import { testId } from '../../utils';
 import Icon from './Icon';
 import IconLink from './IconLink';
 import SocialMediaItem from './SocialMediaItem';
@@ -8,7 +10,7 @@ const path =
 
 function LinkedIn() {
   return (
-    <SocialMediaItem>
+    <SocialMediaItem data-testid={testId(TestId.HeaderLinkedIn)}>
       <IconLink href="https://www.linkedin.com/in/dilatorily" title="LinkedIn">
         <Icon path={path} viewBox="0 0 448 512" />
       </IconLink>

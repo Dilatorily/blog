@@ -1,4 +1,6 @@
 import React, { memo } from 'react';
+import { TestId } from '../../constants';
+import { testId } from '../../utils';
 import Icon from './Icon';
 import IconLink from './IconLink';
 import SocialMediaItem from './SocialMediaItem';
@@ -8,7 +10,7 @@ const path =
 
 function GitHub() {
   return (
-    <SocialMediaItem>
+    <SocialMediaItem data-testid={testId(TestId.HeaderGitHub)}>
       <IconLink href="https://github.com/Dilatorily" title="GitHub">
         <Icon path={path} viewBox="0 0 496 512" />
       </IconLink>

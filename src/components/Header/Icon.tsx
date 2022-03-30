@@ -1,4 +1,6 @@
 import React, { memo } from 'react';
+import { TestId } from '../../constants';
+import { testId } from '../../utils';
 
 interface IconProps {
   path: string;
@@ -8,8 +10,13 @@ interface IconProps {
 
 function Icon({ path, size = 18, viewBox }: IconProps) {
   return (
-    <svg height={`${size}rem`} viewBox={viewBox} width={`${size}rem`}>
-      <path d={path} />
+    <svg
+      data-testid={testId(TestId.HeaderIcon)}
+      height={`${size}rem`}
+      viewBox={viewBox}
+      width={`${size}rem`}
+    >
+      <path d={path} data-testid={testId(TestId.HeaderIconPath)} />
     </svg>
   );
 }

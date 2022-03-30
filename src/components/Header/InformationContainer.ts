@@ -1,7 +1,7 @@
 import { styled } from '@linaria/react';
 import { Breakpoint } from '../../constants';
 
-const TextContainer = styled.div`
+const InformationContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
   text-align: left;
@@ -12,4 +12,4 @@ const TextContainer = styled.div`
   }
 `;
 
-export default TextContainer;
+export default InformationContainer;
