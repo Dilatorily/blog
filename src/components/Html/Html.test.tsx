@@ -1,12 +1,12 @@
 import React from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
+import { render } from '../../utils';
 import Html from './Html';
 
 describe('Html component', () => {
   const body = '<main>Hello World!</main>';
   const criticalStyles = 'main{text-align:center}';
   const serviceWorker = "console.log('Hello World!');";
-  const view = renderToStaticMarkup(
+  const view = render(
     <Html critical={criticalStyles} serviceWorker={serviceWorker}>
       {body}
     </Html>,
@@ -24,13 +24,13 @@ describe('Html component', () => {
     );
   });
 
-  it('passes the stylesheet prop to the link tag', () => {
+  it('passes the stylesheet prop to the link tag', async () => {
     const stylesheet = '/assets/styles.css';
-    const html = renderToStaticMarkup(
+    const utils = render(
       <Html critical={criticalStyles} serviceWorker={serviceWorker} stylesheet={stylesheet}>
         {body}
       </Html>,
     );
-    expect(html).toEqual(expect.stringContaining(`<link href="${stylesheet}" rel="stylesheet"/>`));
+    expect(utils).toEqual(expect.stringContaining(`<link href="${stylesheet}" rel="stylesheet"/>`));
   });
 });

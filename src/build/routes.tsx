@@ -24,11 +24,11 @@ const processHtml = (source: string, destination: string) => {
   copyFileSync(source, destination);
 };
 
-const processMarkdown = (source: string, destination: string) => {
+const processMarkdown = async (source: string, destination: string) => {
   const { name } = parse(source);
   const markdown = readFileSync(source, Encoding['UTF-8']);
   const content = marked.parse(markdown);
-  const html = generateHtml(<Post date={name}>{content}</Post>);
+  const html = await generateHtml(<Post date={name}>{content}</Post>);
   writeFileSync(destination, html, Encoding['UTF-8']);
 };
 

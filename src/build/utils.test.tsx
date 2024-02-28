@@ -1,7 +1,7 @@
 import { existsSync, mkdirSync, readdirSync, Stats, statSync, writeFileSync } from 'fs';
 import { collect } from '@linaria/server';
 import md5 from 'md5';
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import Html from '../components/Html';
 import Root from '../components/Root';
 import { Encoding } from '../constants';
@@ -87,12 +87,14 @@ describe('utils', () => {
         other: 'body{display:block}',
       }));
       jest.mocked(md5).mockImplementation(() => 'abc123');
-      jest.mocked(Root).mockImplementation((({ children }) => children) as FC);
+      jest
+        .mocked(Root)
+        .mockImplementation((({ children }) => children) as FC<{ children: ReactNode }>);
       jest.mocked(Html).mockImplementation((({ children }) => (
         <html lang="en">
           <body>{children}</body>
         </html>
-      )) as FC);
+      )) as FC<{ children: ReactNode }>);
     });
 
     it('returns the content of a HTML page', () => {

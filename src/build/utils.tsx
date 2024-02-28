@@ -3,10 +3,10 @@ import { join, parse } from 'path';
 import { collect } from '@linaria/server';
 import md5 from 'md5';
 import React, { ReactNode } from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
 import Html from '../components/Html';
 import Root from '../components/Root';
 import { Encoding, Path } from '../constants';
+import { render } from '../utils';
 
 export const createFolder = (folder: string) => {
   if (!existsSync(folder)) {
@@ -19,8 +19,8 @@ export const createFolderForFile = (file: string) => {
   createFolder(dir);
 };
 
-export const generateHtml = (children: ReactNode) => {
-  const body = renderToStaticMarkup(<Root>{children}</Root>);
+export const generateHtml = async (children: ReactNode) => {
+  const body = await render(<Root>{children}</Root>);
   const serviceWorker = readFileSync(join(Path.Build, 'serviceWorker.js'), Encoding['UTF-8']);
   const css = readFileSync(join(Path.Build, 'index.css'), Encoding['UTF-8']);
   const { critical, other } = collect(body, css);
@@ -31,7 +31,7 @@ export const generateHtml = (children: ReactNode) => {
     writeFileSync(stylesheetPath, other, Encoding['UTF-8']);
   }
 
-  const html = renderToStaticMarkup(
+  return render(
     <Html
       critical={critical}
       serviceWorker={serviceWorker}
@@ -40,8 +40,6 @@ export const generateHtml = (children: ReactNode) => {
       {body}
     </Html>,
   );
-
-  return `<!DOCTYPE html>${html}`;
 };
 
 export const listFiles = (path: string): string[] =>

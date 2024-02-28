@@ -14,8 +14,8 @@ const listPosts = (): Record<string, string> =>
     return Object.assign(routes, { [name]: content });
   }, {});
 
-export default () => {
+export default async () => {
   const posts = listPosts();
-  const html = generateHtml(<Home posts={posts} />);
+  const html = await generateHtml(<Home posts={posts} />);
   writeFileSync(join(Path.Documents, 'index.html'), html, Encoding['UTF-8']);
 };

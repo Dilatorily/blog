@@ -40,7 +40,7 @@ describe('buildRoutes', () => {
     jest.mocked(Post).mockImplementation(({ children }) => <HtmlParser>{children}</HtmlParser>);
     jest
       .mocked(generateHtml)
-      .mockImplementation((children) => renderToStaticMarkup(<>{children}</>));
+      .mockImplementation((children) => Promise.resolve(renderToStaticMarkup(<>{children}</>)));
   });
 
   beforeEach(() => {
